@@ -1,0 +1,232 @@
+
+TRSFishingHandler
+================
+TRSFishingHandler is a full color fishing bot that is highly customizable.
+
+
+------------
+
+TRSFishingHandler.Setup
+~~~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ procedure TRSFishingHandler.Setup();
+
+Resets TRSFishingHandler to the non fishing state.
+This will:
+  - Pause TRSFishingHandler.Timer;
+  - Reset TRSFishingHandler.CurrentSpot;
+  - Set TRSFishingHandler.IsFishing to False;
+
+
+------------
+
+TRSFishingHandler.Reset
+~~~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ procedure TRSFishingHandler.Reset();
+
+Resets TRSFishingHandler to the non fishing state.
+This will:
+  - Pause TRSFishingHandler.Timer;
+  - Reset TRSFishingHandler.CurrentSpot;
+  - Set TRSFishingHandler.IsFishing to False;
+
+
+------------
+
+TRSFishingHandler.GetMMShoreLine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSFishingHandler.GetMMShoreLine(): TPointArray;
+
+Get the shore lines on the minimap.
+
+Example
+-------
+.. code-block:: pascal  
+
+  ShowOnClient(TRSFishingHandler.GetMMShoreLine());
+
+
+------------
+
+TRSFishingHandler.GetMSShoreLine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSFishingHandler.GetMSShoreLine(): TPointArray;
+
+Get the shore lines on the mainscreen.
+
+Example
+-------
+.. code-block:: pascal  
+
+  ShowOnClient(TRSFishingHandler.GetMSShoreLine());
+
+
+------------
+
+TRSFishingHandler.FindWaterDirection
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSFishingHandler.FindWaterDirection(): TRectangle;
+
+Finds the adjacent tile that is directly close to the player that has water.
+
+Example
+-------
+.. code-block:: pascal  
+
+  ShowOnClient(TRSFishingHandler.FindWaterDirection(), False);
+
+
+------------
+
+TRSFishingHandler.FindSpot
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSFishingHandler.FindSpot(out atpa: T2DPointArray; waitTime: Int32 = 350): Boolean;
+.. code-block:: pascal
+
+ function TRSFishingHandler.FindSpot(): Boolean;  overload;
+
+Find fishing spots on the mainscreen. Optionally return at ATPA of the found spots.
+
+Example
+-------
+.. code-block:: pascal  
+
+  var
+    atpa: T2DPointArray;
+  begin
+    if TRSFishingHandler.FindSpot(atpa) then //TRSFishingHandler.FindSpot() returns true/false.
+      ShowOnClient(atpa);
+  end;
+
+
+------------
+
+TRSFishingHandler.WaitSpot
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSFishingHandler.WaitSpot(out atpa: T2DPointArray; waitTime: Int32 = 350): Boolean;
+.. code-block:: pascal
+
+ function TRSFishingHandler.WaitSpot(): Boolean;  overload;
+
+Wait for fishing spots on the mainscreen. Optionally return at ATPA of the found spots.
+
+Example
+-------
+.. code-block:: pascal  
+
+  var
+    atpa: T2DPointArray;
+  begin
+    if RSFishingHandler.WaitSpot(atpa) then //TRSFishingHandler.FindSpot() returns true/false.
+      ShowOnClient(atpa);
+  end;
+
+
+------------
+
+TRSFishingHandler.SpotMoved
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSFishingHandler.SpotMoved(out atpa: T2DPointArray): Boolean;
+.. code-block:: pascal
+
+ function TRSFishingHandler.SpotMoved(): Boolean;  overload;
+
+Check if TRSFishingHandler.CurrentSpot moved.
+
+Example
+-------
+.. code-block:: pascal  
+
+  WriteLn TRSFishingHandler.SpotMoved();
+
+
+------------
+
+TRSFishingHandler._StoppedFishing
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSFishingHandler._StoppedFishing(): Boolean;
+
+Internal helper method to check for quick things that guarantee us we are not fishing anymore.
+
+
+------------
+
+TRSFishingHandler.CheckFishing
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSFishingHandler.CheckFishing(out atpa: T2DPointArray): Boolean;
+.. code-block:: pascal
+
+ function TRSFishingHandler.CheckFishing(): Boolean;  overload;
+
+Check if we are still fishing. This function could give false positives but it's extremely unlikely.
+To determine if we are still fishing it does the following:
+  - Check if TRSFishingHandler.CurrentSpot (which is the last spot we clicked) has moved.
+  - Check if the inventory is full.
+  - Check if we leveled up.
+  - Check if TRSFishingHandler.Timer has reached it's end. The time lasts anywhere between 40 seconds and 70 seconds randomly
+    and it's reset everytime this is called and we earned XP.
+
+Example
+-------
+.. code-block:: pascal  
+
+  WriteLn TRSFishingHandler.CheckFishing();
+
+
+------------
+
+TRSFishingHandler.FacingWater
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function TRSFishingHandler.FacingWater(): Boolean;
+
+Check if we have water directly north, west, south or east of us.
+
+Example
+-------
+.. code-block:: pascal  
+
+  WriteLn TRSFishingHandler.FacingWater();
+
+
+------------
+
+TRSFishingHandler.ClickSpot
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+
+  function TRSFishingHandler.ClickSpot(out atpa: T2DPointArray): Boolean;
+  function TRSFishingHandler.ClickSpot(): Boolean;  overload;
+
+Click the closest fishing spot to the player and switches TRSFishingHandler to "IsFishing".
+We can check if we are still fishing with TRSFishingHandler.CheckFishing().
+
+Example
+-------
+.. code-block:: pascal  
+
+  TRSFishingHandler.ClickSpot();
+
+
+------------

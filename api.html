@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API &mdash; WaspLib  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Utility types, contants and variables" href="utiltypes.html" />
+    <link rel="prev" title="Math" href="math.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            WaspLib
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="webber.html">Tool Webber</a></li>
+<li class="toctree-l1"><a class="reference internal" href="map_maker.html">MapMaker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getobject.html">Tool GetObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="codetester.html">Tool CodeTester</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monster_maker.html">PolygonMaker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polygon_maker.html">PolygonMaker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getpos.html">Tool GetPos</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="optional.html">Optional Files</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="biometrics.html">Biometrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="color.html">Color</a></li>
+<li class="toctree-l1"><a class="reference internal" href="math.html">Math</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#type-statspayload">type StatsPayload</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#statspayload-reset">StatsPayload.Reset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#statspayload-setusername">StatsPayload.SetUsername</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#statspayload-setup">StatsPayload.Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#statspayload-update">StatsPayload.Update</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#statspayload-formdata">StatsPayload.FormData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#type-apiclient">type APIClient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#apiclient-terminate">APIClient.Terminate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#apiclient-setup">APIClient.Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#apiclient-getuuid">APIClient.GetUUID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#apiclient-setlocal">APIClient.SetLocal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#apiclient-get">APIClient.GET</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#apiclient-post">APIClient.POST</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#apiclient-hashpassword">APIClient.HashPassword</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#apiclient-checkpassword">APIClient.CheckPassword</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#apiclient-updatepassword">APIClient.UpdatePassword</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#apiclient-checkstats">APIClient.CheckStats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#apiclient-submitstats">APIClient.SubmitStats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#apiclient-getscript">APIClient.GetScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#apiclient-getscriptrevision">APIClient.GetScriptRevision</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#apiclient-getversion">APIClient.GetVersion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#apiclient-getallversions">APIClient.GetAllVersions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="utiltypes.html">Utility types, contants and variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cacheparser.html">RSCacheParser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="misc.html">Misc</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="recorder.html">Recorder</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mousezoom.html">MouseZoom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="remoteinput.html">RemoteInput</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mouse.html">Mouse</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="data.html">Data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="formutils.html">Form Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scriptform.html">ScriptForm</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tpoint.html">TPoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcuboid.html">Cuboids</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tpointarray.html">TPointArray</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="consumables.html">Consumables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="items.html">Items Extensions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mm2ms.html">MM2MS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="progress.html">ProgressReport</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dotfilters.html">DotFilters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basestats.html">BaseStats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rsclient.html">RSClient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basescript.html">BaseScript</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="login.html">Login</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpdrop.html">XPDrop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpbar.html">XPDrop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="minimap.html">Minimap</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="xpbarsetup.html">XPBar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bankpin.html">BankPin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="depositbox.html">DepositBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bank.html">BankPin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mainscreen.html">MainScreen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collectbox.html">CollectBox</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="magic.html">Magic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="worldhopper.html">TRSWorldHopper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logout.html">Logout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inventory.html">Inventory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anvil.html">Anvil</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="chat.html">Chat.LeveledUp</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="consumablehandler.html">ConsumableHandlers</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="itemfinder.html">ItemFinder</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="walker.html">Walker</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="walkerobjects.html">TRSWalkerObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rsmonster.html">RSMonters</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="craftscreen.html">CraftScreen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="silverscreen.html">SilverScreen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fairyring.html">FairyRing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="furniturebuilder.html">FurnitureBuilder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="driftnet.html">TRSDriftNet.BankOverlayOpen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="driftnet.html#trsdriftnet-destroyoverlayopen">TRSDriftNet.DestroyOverlayOpen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="driftnet.html#trsdriftnet-hasoverlay">TRSDriftNet.HasOverlay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="driftnet.html#trsdriftnet-getslotboxes">TRSDriftNet.GetSlotBoxes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="driftnet.html#trsdriftnet-getbuttons">TRSDriftNet.GetButtons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="driftnet.html#trsdriftnet-getbutton">TRSDriftNet.GetButton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anvil%28optional_interfaces_mainscreen%29.html">Anvil</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="consumablehandler%28optional_handlers%29.html">ConsumableHandlers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="combathandler.html">CombatHandler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rsfishinghandler.html">TRSFishingHandler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pohhandler.html">POHHandler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="loothandler.html">LootHandler</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">WaspLib</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">API</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/api.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="api">
+<h1>API<a class="headerlink" href="#api" title="Link to this heading"></a></h1>
+<p>Methods related to wasp-api.</p>
+<hr class="docutils" />
+<section id="type-statspayload">
+<h2>type StatsPayload<a class="headerlink" href="#type-statspayload" title="Link to this heading"></a></h2>
+<p>Type to help you handle stats submissions.</p>
+</section>
+<hr class="docutils" />
+<section id="statspayload-reset">
+<h2>StatsPayload.Reset<a class="headerlink" href="#statspayload-reset" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">procedure</span><span class="w"> </span><span class="nc">StatsPayload</span><span class="o">.</span><span class="nf">Reset</span><span class="p">()</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Resets StatsPayload. Automatically called by APIClient.SubmitStats() on a successful stats submission.</p>
+</section>
+<hr class="docutils" />
+<section id="statspayload-setusername">
+<h2>StatsPayload.SetUsername<a class="headerlink" href="#statspayload-setusername" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">procedure</span><span class="w"> </span><span class="nc">StatsPayload</span><span class="o">.</span><span class="nf">SetUsername</span><span class="p">(</span><span class="n">user</span><span class="o">:</span><span class="w"> </span><span class="k">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;&#39;</span><span class="p">)</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Sets StatsPayload username if it hasn’t been set yet.</p>
+</section>
+<hr class="docutils" />
+<section id="statspayload-setup">
+<h2>StatsPayload.Setup<a class="headerlink" href="#statspayload-setup" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">procedure</span><span class="w"> </span><span class="nc">StatsPayload</span><span class="o">.</span><span class="nf">Setup</span><span class="p">(</span><span class="n">id</span><span class="o">,</span><span class="w"> </span><span class="n">pw</span><span class="o">:</span><span class="w"> </span><span class="k">String</span><span class="o">;</span><span class="w"> </span><span class="n">user</span><span class="o">:</span><span class="w"> </span><span class="k">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;&#39;</span><span class="p">)</span><span class="o">;</span><span class="w">  </span><span class="n">static</span><span class="o">;</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>Sets StatsPayload up.</dt><dd><ul class="simple">
+<li><p><strong>id</strong> should be your script id. If the script id is not in waspscripts.com database the submission will be rejected.</p></li>
+<li><p><strong>pw</strong> should be your account password. Passwordless accounts can exist but then anyone can submit data to them.
+A passwordless account will take in the first ever password submission it gets as it’s password and will only accept future data
+if that password is included.</p></li>
+<li><p><strong>user</strong> sets a wasp-stats username.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<hr class="docutils" />
+<section id="statspayload-update">
+<h2>StatsPayload.Update<a class="headerlink" href="#statspayload-update" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">procedure</span><span class="w"> </span><span class="nc">StatsPayload</span><span class="o">.</span><span class="nf">Update</span><span class="p">(</span><span class="n">xp</span><span class="o">,</span><span class="w"> </span><span class="n">gp</span><span class="o">,</span><span class="w"> </span><span class="nb">time</span><span class="o">:</span><span class="w"> </span><span class="n">Int32</span><span class="p">)</span><span class="o">;</span><span class="w">  </span><span class="n">static</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Update StatsPayload data for the next submission.
+You can update it several times before submitting it, however, keep in mind if the runtime is over 15mins the data will be rejected to
+avoid exploitation.
+Experience, Gold and Levels also have a limit of how much can be submitted on each request. This limit set by the scripter in waspscripts.com (not implemented yet… currently has some generous limits)</p>
+<p>You can set the account as banned for tracking ban rates but it’s not fully implemented yet.
+If you set an account as banned you won’t be able to submit more data to it until you set it as unbanned.</p>
+</section>
+<hr class="docutils" />
+<section id="statspayload-formdata">
+<h2>StatsPayload.FormData<a class="headerlink" href="#statspayload-formdata" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">StatsPayload</span><span class="o">.</span><span class="nf">FormData</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="n">TStringArray</span><span class="o">;</span><span class="w"> </span><span class="n">static</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Transforms the data in StatsPayload into a TStringArray that can be used by a APIClient.</p>
+</section>
+<hr class="docutils" />
+<section id="type-apiclient">
+<h2>type APIClient<a class="headerlink" href="#type-apiclient" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">type</span><span class="w"> </span><span class="n">APIClient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">record</span><span class="p">(</span><span class="n">TSRLBaseRecord</span><span class="p">)</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="k">var</span>
+<span class="w">  </span><span class="n">Disabled</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span>
+<span class="w">  </span><span class="n">HTTPClient</span><span class="o">:</span><span class="w"> </span><span class="n">Int32</span><span class="o">;</span>
+<span class="w">  </span><span class="n">StatsServer</span><span class="o">:</span><span class="w"> </span><span class="k">String</span><span class="o">;</span>
+<span class="w">  </span><span class="n">UUID</span><span class="o">:</span><span class="w"> </span><span class="k">String</span><span class="o">;</span>
+<span class="w">  </span><span class="n">Timer</span><span class="o">:</span><span class="w"> </span><span class="n">TCountDown</span><span class="o">;</span>
+<span class="w">  </span><span class="n">TimeStamp</span><span class="o">:</span><span class="w"> </span><span class="n">UInt64</span><span class="o">;</span>
+<span class="w">  </span><span class="n">IsSetup</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span>
+<span class="w">  </span><span class="n">Benchmark</span><span class="o">:</span><span class="w"> </span><span class="n">TIntegerArray</span><span class="o">;</span>
+<span class="w">  </span><span class="n">Fails</span><span class="o">:</span><span class="w"> </span><span class="n">Int32</span><span class="o">;</span>
+<span class="k">end</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Type responsible for stats submissions.
+This is basically a simba wrapper for the waspscripts API.</p>
+<p>You can find the API docs in <a class="reference external" href="https://api.waspscripts.com/docs">https://api.waspscripts.com/docs</a> if you need to read them
+but the APIClient should be able to do everything for you.</p>
+</section>
+<hr class="docutils" />
+<section id="apiclient-terminate">
+<h2>APIClient.Terminate<a class="headerlink" href="#apiclient-terminate" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">procedure</span><span class="w"> </span><span class="nc">APIClient</span><span class="o">.</span><span class="nf">Terminate</span><span class="p">()</span><span class="o">;</span><span class="w">  </span><span class="n">static</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Internal method automatically called on script termination.</p>
+</section>
+<hr class="docutils" />
+<section id="apiclient-setup">
+<h2>APIClient.Setup<a class="headerlink" href="#apiclient-setup" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">procedure</span><span class="w"> </span><span class="nc">APIClient</span><span class="o">.</span><span class="nf">Setup</span><span class="p">()</span><span class="o">;</span><span class="w"> </span><span class="n">static</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Internal method automatically called when attempting to use APIClient.GET() and APIClient.POST().</p>
+</section>
+<hr class="docutils" />
+<section id="apiclient-getuuid">
+<h2>APIClient.GetUUID<a class="headerlink" href="#apiclient-getuuid" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">APIClient</span><span class="o">.</span><span class="nf">GetUUID</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="k">String</span><span class="o">;</span><span class="w"> </span><span class="n">static</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Returns your UUID</p>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Link to this heading"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="nb">WriteLn</span><span class="w"> </span><span class="n">APIClient</span><span class="o">.</span><span class="n">GetUUID</span><span class="p">()</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="apiclient-setlocal">
+<h2>APIClient.SetLocal<a class="headerlink" href="#apiclient-setlocal" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">procedure</span><span class="w"> </span><span class="nc">APIClient</span><span class="o">.</span><span class="nf">SetLocal</span><span class="p">(</span><span class="n">port</span><span class="o">:</span><span class="w"> </span><span class="n">Int32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8080</span><span class="p">)</span><span class="o">;</span><span class="w"> </span><span class="n">static</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Method only meant to be used if you are hosting a local stats server for debugging purposes.</p>
+</section>
+<hr class="docutils" />
+<section id="apiclient-get">
+<h2>APIClient.GET<a class="headerlink" href="#apiclient-get" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">APIClient</span><span class="o">.</span><span class="nf">GET</span><span class="p">(</span><span class="n">route</span><span class="o">:</span><span class="w"> </span><span class="k">String</span><span class="o">;</span><span class="w"> </span><span class="n">verbose</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">True</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="k">String</span><span class="o">;</span><span class="w"> </span><span class="n">static</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Makes a GET request to the WaspScripts API in the specified <strong>route</strong>.
+You probably don’t need to use this method directly.</p>
+</section>
+<hr class="docutils" />
+<section id="apiclient-post">
+<h2>APIClient.POST<a class="headerlink" href="#apiclient-post" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">APIClient</span><span class="o">.</span><span class="nf">POST</span><span class="p">(</span><span class="n">route</span><span class="o">:</span><span class="w"> </span><span class="k">String</span><span class="o">;</span><span class="w"> </span><span class="n">payload</span><span class="o">:</span><span class="w"> </span><span class="n">TStringArray</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="k">String</span><span class="o">;</span><span class="w"> </span><span class="n">static</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Makes a POST request to the WaspScripts API in the specified <strong>route</strong>.
+<strong>payload</strong> is an array of string with the following format:</p>
+<blockquote>
+<div><p>[‘var1=value1’, ‘var2=value2’, …]</p>
+</div></blockquote>
+<p>You probably don’t need to use this method directly.</p>
+</section>
+<hr class="docutils" />
+<section id="apiclient-hashpassword">
+<h2>APIClient.HashPassword<a class="headerlink" href="#apiclient-hashpassword" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">APIClient</span><span class="o">.</span><span class="nf">HashPassword</span><span class="p">(</span><span class="n">password</span><span class="o">:</span><span class="w"> </span><span class="k">String</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="k">String</span><span class="o">;</span><span class="w"> </span><span class="n">static</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Returns a salted and hashed password.
+This serves no purpose other than giving you a glimpse of what is stored in waspscripts database when you submit your password.</p>
+<p>Try the example below, notice how everytime you run it you will have slightly different results.
+That’s the magic of “salting” passwords. You can read more about it on the wikipedia <a class="reference external" href="https://en.wikipedia.org/wiki/Salt_(cryptography">https://en.wikipedia.org/wiki/Salt_(cryptography</a>).</p>
+<section id="id1">
+<h3>Example<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="nb">WriteLn</span><span class="w"> </span><span class="n">APIClient</span><span class="o">.</span><span class="n">HashPassword</span><span class="p">(</span><span class="s">&#39;helloworld&#39;</span><span class="p">)</span><span class="o">;</span>
+<span class="nb">WriteLn</span><span class="w"> </span><span class="n">APIClient</span><span class="o">.</span><span class="n">HashPassword</span><span class="p">(</span><span class="n">StatsPayload</span><span class="o">.</span><span class="n">Password</span><span class="p">)</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="apiclient-checkpassword">
+<h2>APIClient.CheckPassword<a class="headerlink" href="#apiclient-checkpassword" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">APIClient</span><span class="o">.</span><span class="nf">CheckPassword</span><span class="p">(</span><span class="n">uuid</span><span class="o">:</span><span class="w"> </span><span class="k">String</span><span class="o">;</span><span class="w"> </span><span class="n">password</span><span class="o">:</span><span class="w"> </span><span class="k">String</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span><span class="w"> </span><span class="n">static</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Simply returns true/false if the <strong>password</strong> you submit matches what is stored in waspscripts stats database for the specified <strong>uuid</strong>.</p>
+<section id="id2">
+<h3>Example<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="nb">WriteLn</span><span class="w"> </span><span class="n">APIClient</span><span class="o">.</span><span class="n">CheckPassword</span><span class="p">(</span><span class="s">&#39;0.999999999999999&#39;</span><span class="o">,</span><span class="w"> </span><span class="s">&#39;helloworld&#39;</span><span class="p">)</span><span class="o">;</span>
+<span class="nb">WriteLn</span><span class="w"> </span><span class="n">APIClient</span><span class="o">.</span><span class="n">CheckPassword</span><span class="p">(</span><span class="n">APIClient</span><span class="o">.</span><span class="n">Generateuuid</span><span class="p">()</span><span class="o">,</span><span class="w"> </span><span class="n">APIClient</span><span class="o">.</span><span class="n">GeneratePassword</span><span class="p">())</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="apiclient-updatepassword">
+<h2>APIClient.UpdatePassword<a class="headerlink" href="#apiclient-updatepassword" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">APIClient</span><span class="o">.</span><span class="nf">UpdatePassword</span><span class="p">(</span><span class="n">uuid</span><span class="o">:</span><span class="w"> </span><span class="k">String</span><span class="o">;</span><span class="w"> </span><span class="n">password</span><span class="o">,</span><span class="w"> </span><span class="n">newPassword</span><span class="o">:</span><span class="w"> </span><span class="k">String</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span><span class="w"> </span><span class="n">static</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Because users passwords can be changed and that’s what are used by default for
+stats password a way to update the stats password is required.
+That’s what this method is for.</p>
+<p>This will probably be complicated for regular users but an easier way can be
+figured out in the future.</p>
+<section id="id3">
+<h3>Example<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">const</span>
+<span class="w">  </span><span class="n">PASSWORD</span><span class="o">:</span><span class="w">     </span><span class="k">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;old_password&#39;</span><span class="o">;</span>
+<span class="w">  </span><span class="n">NEW_PASSWORD</span><span class="o">:</span><span class="w"> </span><span class="k">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;new_password&#39;</span><span class="o">;</span>
+<span class="k">begin</span>
+<span class="w">  </span><span class="n">APIClient</span><span class="o">.</span><span class="n">UpdatePassword</span><span class="p">(</span><span class="n">APIClient</span><span class="o">.</span><span class="n">UUID</span><span class="o">,</span><span class="w"> </span><span class="n">PASSWORD</span><span class="o">,</span><span class="w"> </span><span class="n">NEW_PASSWORD</span><span class="p">)</span><span class="o">;</span>
+<span class="k">end</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="apiclient-checkstats">
+<h2>APIClient.CheckStats<a class="headerlink" href="#apiclient-checkstats" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">APIClient</span><span class="o">.</span><span class="nf">CheckStats</span><span class="p">(</span><span class="n">uuid</span><span class="o">:</span><span class="w"> </span><span class="k">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="k">String</span><span class="o">;</span><span class="w"> </span><span class="n">static</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Returns the stats of the specified <strong>uuid</strong>.</p>
+<section id="id4">
+<h3>Example<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="nb">WriteLn</span><span class="w"> </span><span class="n">APIClient</span><span class="o">.</span><span class="n">CheckStats</span><span class="p">(</span><span class="s">&#39;0.999999999999999&#39;</span><span class="p">)</span><span class="o">;</span>
+<span class="nb">WriteLn</span><span class="w"> </span><span class="n">APIClient</span><span class="o">.</span><span class="n">CheckStats</span><span class="p">(</span><span class="n">APIClient</span><span class="o">.</span><span class="n">Generateuuid</span><span class="p">())</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="apiclient-submitstats">
+<h2>APIClient.SubmitStats<a class="headerlink" href="#apiclient-submitstats" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">APIClient</span><span class="o">.</span><span class="nf">SubmitStats</span><span class="p">(</span><span class="n">uuid</span><span class="o">:</span><span class="w"> </span><span class="k">String</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span><span class="w"> </span><span class="n">static</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Method to submit stats to wasp-stats with the help of <strong>StatsPayload</strong>.</p>
+<section id="id5">
+<h3>Example<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="n">StatsPayload</span><span class="o">.</span><span class="n">Setup</span><span class="p">(</span><span class="s">&#39;SCRIPT_ID_HERE&#39;</span><span class="o">,</span><span class="w"> </span><span class="n">APIClient</span><span class="o">.</span><span class="n">GeneratePassword</span><span class="p">())</span><span class="o">;</span>
+<span class="n">StatsPayload</span><span class="o">.</span><span class="n">Update</span><span class="p">(</span><span class="mi">100</span><span class="o">,</span><span class="w"> </span><span class="mi">100</span><span class="o">,</span><span class="w"> </span><span class="mi">5000</span><span class="p">)</span><span class="o">;</span>
+<span class="nb">WriteLn</span><span class="w"> </span><span class="n">APIClient</span><span class="o">.</span><span class="n">SubmitStats</span><span class="p">(</span><span class="n">APIClient</span><span class="o">.</span><span class="n">Generateuuid</span><span class="p">())</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="apiclient-getscript">
+<h2>APIClient.GetScript<a class="headerlink" href="#apiclient-getscript" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="n">APIClient</span><span class="o">.</span><span class="n">GetScript</span><span class="p">(</span><span class="n">script_id</span><span class="o">:</span><span class="w"> </span><span class="k">String</span><span class="o">;</span><span class="w"> </span><span class="n">verbose</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">False</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="k">String</span><span class="o">;</span><span class="w"> </span><span class="n">static</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Retrieves info of the script with the specified <strong>script_id</strong> from <a class="reference external" href="https://api.waspscripts.com">https://api.waspscripts.com</a></p>
+<section id="id6">
+<h3>Example<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="n">APIClient</span><span class="o">.</span><span class="n">GetScript</span><span class="p">(</span><span class="s">&#39;cf0a01e4-8d20-41c2-a78e-3d83081b388d&#39;</span><span class="p">)</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="apiclient-getscriptrevision">
+<h2>APIClient.GetScriptRevision<a class="headerlink" href="#apiclient-getscriptrevision" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">APIClient</span><span class="o">.</span><span class="nf">GetScriptRevision</span><span class="p">(</span><span class="n">script_id</span><span class="o">:</span><span class="w"> </span><span class="k">String</span><span class="o">;</span><span class="w"> </span><span class="n">verbose</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">False</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="n">Int32</span><span class="o">;</span><span class="w"> </span><span class="n">static</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Retrieves the latest revision number of the script with the specified <strong>script_id</strong> from <a class="reference external" href="https://api.waspscripts.com">https://api.waspscripts.com</a></p>
+<section id="id7">
+<h3>Example<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="nb">WriteLn</span><span class="w"> </span><span class="n">APIClient</span><span class="o">.</span><span class="n">GetScriptRevision</span><span class="p">(</span><span class="s">&#39;cf0a01e4-8d20-41c2-a78e-3d83081b388d&#39;</span><span class="p">)</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="apiclient-getversion">
+<h2>APIClient.GetVersion<a class="headerlink" href="#apiclient-getversion" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">APIClient</span><span class="o">.</span><span class="nf">GetVersion</span><span class="p">(</span><span class="n">pkg</span><span class="o">:</span><span class="w"> </span><span class="k">String</span><span class="o">;</span><span class="w"> </span><span class="n">verbose</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">False</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="k">String</span><span class="o">;</span><span class="w"> </span><span class="n">static</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Retrieves the latest version of the package specified from <a class="reference external" href="https://api.waspscripts.com">https://api.waspscripts.com</a>.</p>
+<section id="id8">
+<h3>Example<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="nb">WriteLn</span><span class="w"> </span><span class="n">APIClient</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">(</span><span class="s">&#39;srl-t&#39;</span><span class="p">)</span><span class="o">;</span>
+<span class="nb">WriteLn</span><span class="w"> </span><span class="n">APIClient</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">(</span><span class="s">&#39;wasplib&#39;</span><span class="p">)</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="apiclient-getallversions">
+<h2>APIClient.GetAllVersions<a class="headerlink" href="#apiclient-getallversions" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">APIClient</span><span class="o">.</span><span class="nf">GetAllVersions</span><span class="p">(</span><span class="n">script_id</span><span class="o">:</span><span class="w"> </span><span class="k">String</span><span class="o">;</span><span class="w"> </span><span class="n">out</span><span class="w"> </span><span class="n">revision</span><span class="o">,</span><span class="w"> </span><span class="n">srltVersion</span><span class="o">,</span><span class="w"> </span><span class="n">wlVersion</span><span class="o">:</span><span class="w"> </span><span class="k">String</span><span class="o">;</span><span class="w"> </span><span class="n">verbose</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">False</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="k">String</span><span class="o">;</span><span class="w"> </span><span class="n">static</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Retrieves the latest script revison of <strong>script_id</strong> and the latest SRL-T and WaspLib versions <a class="reference external" href="https://api.waspscripts.com">https://api.waspscripts.com</a>.</p>
+<hr class="docutils" />
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="math.html" class="btn btn-neutral float-left" title="Math" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="utiltypes.html" class="btn btn-neutral float-right" title="Utility types, contants and variables" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, WaspBots.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
+
+</body>
+</html>

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TRSFishingHandler &mdash; WaspLib  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="POHHandler" href="pohhandler.html" />
+    <link rel="prev" title="CombatHandler" href="combathandler.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            WaspLib
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="webber.html">Tool Webber</a></li>
+<li class="toctree-l1"><a class="reference internal" href="map_maker.html">MapMaker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getobject.html">Tool GetObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="codetester.html">Tool CodeTester</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monster_maker.html">PolygonMaker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polygon_maker.html">PolygonMaker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getpos.html">Tool GetPos</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="optional.html">Optional Files</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="biometrics.html">Biometrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="color.html">Color</a></li>
+<li class="toctree-l1"><a class="reference internal" href="math.html">Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utiltypes.html">Utility types, contants and variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cacheparser.html">RSCacheParser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="misc.html">Misc</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="recorder.html">Recorder</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mousezoom.html">MouseZoom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="remoteinput.html">RemoteInput</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mouse.html">Mouse</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="data.html">Data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="formutils.html">Form Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scriptform.html">ScriptForm</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tpoint.html">TPoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcuboid.html">Cuboids</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tpointarray.html">TPointArray</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="consumables.html">Consumables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="items.html">Items Extensions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mm2ms.html">MM2MS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="progress.html">ProgressReport</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dotfilters.html">DotFilters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basestats.html">BaseStats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rsclient.html">RSClient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basescript.html">BaseScript</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="login.html">Login</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpdrop.html">XPDrop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpbar.html">XPDrop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="minimap.html">Minimap</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="xpbarsetup.html">XPBar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bankpin.html">BankPin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="depositbox.html">DepositBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bank.html">BankPin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mainscreen.html">MainScreen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collectbox.html">CollectBox</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="magic.html">Magic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="worldhopper.html">TRSWorldHopper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logout.html">Logout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inventory.html">Inventory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anvil.html">Anvil</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="chat.html">Chat.LeveledUp</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="consumablehandler.html">ConsumableHandlers</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="itemfinder.html">ItemFinder</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="walker.html">Walker</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="walkerobjects.html">TRSWalkerObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rsmonster.html">RSMonters</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="craftscreen.html">CraftScreen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="silverscreen.html">SilverScreen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fairyring.html">FairyRing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="furniturebuilder.html">FurnitureBuilder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="driftnet.html">TRSDriftNet.BankOverlayOpen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="driftnet.html#trsdriftnet-destroyoverlayopen">TRSDriftNet.DestroyOverlayOpen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="driftnet.html#trsdriftnet-hasoverlay">TRSDriftNet.HasOverlay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="driftnet.html#trsdriftnet-getslotboxes">TRSDriftNet.GetSlotBoxes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="driftnet.html#trsdriftnet-getbuttons">TRSDriftNet.GetButtons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="driftnet.html#trsdriftnet-getbutton">TRSDriftNet.GetButton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anvil%28optional_interfaces_mainscreen%29.html">Anvil</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="consumablehandler%28optional_handlers%29.html">ConsumableHandlers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="combathandler.html">CombatHandler</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">TRSFishingHandler</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#trsfishinghandler-setup">TRSFishingHandler.Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trsfishinghandler-reset">TRSFishingHandler.Reset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trsfishinghandler-getmmshoreline">TRSFishingHandler.GetMMShoreLine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trsfishinghandler-getmsshoreline">TRSFishingHandler.GetMSShoreLine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trsfishinghandler-findwaterdirection">TRSFishingHandler.FindWaterDirection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trsfishinghandler-findspot">TRSFishingHandler.FindSpot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trsfishinghandler-waitspot">TRSFishingHandler.WaitSpot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trsfishinghandler-spotmoved">TRSFishingHandler.SpotMoved</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trsfishinghandler-stoppedfishing">TRSFishingHandler._StoppedFishing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trsfishinghandler-checkfishing">TRSFishingHandler.CheckFishing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trsfishinghandler-facingwater">TRSFishingHandler.FacingWater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trsfishinghandler-clickspot">TRSFishingHandler.ClickSpot</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pohhandler.html">POHHandler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="loothandler.html">LootHandler</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">WaspLib</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">TRSFishingHandler</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/rsfishinghandler.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="trsfishinghandler">
+<h1>TRSFishingHandler<a class="headerlink" href="#trsfishinghandler" title="Link to this heading"></a></h1>
+<p>TRSFishingHandler is a full color fishing bot that is highly customizable.</p>
+<hr class="docutils" />
+<section id="trsfishinghandler-setup">
+<h2>TRSFishingHandler.Setup<a class="headerlink" href="#trsfishinghandler-setup" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">procedure</span><span class="w"> </span><span class="nc">TRSFishingHandler</span><span class="o">.</span><span class="nf">Setup</span><span class="p">()</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Resets TRSFishingHandler to the non fishing state.
+This will:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Pause TRSFishingHandler.Timer;</p></li>
+<li><p>Reset TRSFishingHandler.CurrentSpot;</p></li>
+<li><p>Set TRSFishingHandler.IsFishing to False;</p></li>
+</ul>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="trsfishinghandler-reset">
+<h2>TRSFishingHandler.Reset<a class="headerlink" href="#trsfishinghandler-reset" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">procedure</span><span class="w"> </span><span class="nc">TRSFishingHandler</span><span class="o">.</span><span class="nf">Reset</span><span class="p">()</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Resets TRSFishingHandler to the non fishing state.
+This will:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Pause TRSFishingHandler.Timer;</p></li>
+<li><p>Reset TRSFishingHandler.CurrentSpot;</p></li>
+<li><p>Set TRSFishingHandler.IsFishing to False;</p></li>
+</ul>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="trsfishinghandler-getmmshoreline">
+<h2>TRSFishingHandler.GetMMShoreLine<a class="headerlink" href="#trsfishinghandler-getmmshoreline" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSFishingHandler</span><span class="o">.</span><span class="nf">GetMMShoreLine</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="n">TPointArray</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Get the shore lines on the minimap.</p>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Link to this heading"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="n">ShowOnClient</span><span class="p">(</span><span class="n">TRSFishingHandler</span><span class="o">.</span><span class="n">GetMMShoreLine</span><span class="p">())</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="trsfishinghandler-getmsshoreline">
+<h2>TRSFishingHandler.GetMSShoreLine<a class="headerlink" href="#trsfishinghandler-getmsshoreline" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSFishingHandler</span><span class="o">.</span><span class="nf">GetMSShoreLine</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="n">TPointArray</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Get the shore lines on the mainscreen.</p>
+<section id="id1">
+<h3>Example<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="n">ShowOnClient</span><span class="p">(</span><span class="n">TRSFishingHandler</span><span class="o">.</span><span class="n">GetMSShoreLine</span><span class="p">())</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="trsfishinghandler-findwaterdirection">
+<h2>TRSFishingHandler.FindWaterDirection<a class="headerlink" href="#trsfishinghandler-findwaterdirection" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSFishingHandler</span><span class="o">.</span><span class="nf">FindWaterDirection</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="n">TRectangle</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Finds the adjacent tile that is directly close to the player that has water.</p>
+<section id="id2">
+<h3>Example<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="n">ShowOnClient</span><span class="p">(</span><span class="n">TRSFishingHandler</span><span class="o">.</span><span class="n">FindWaterDirection</span><span class="p">()</span><span class="o">,</span><span class="w"> </span><span class="k">False</span><span class="p">)</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="trsfishinghandler-findspot">
+<h2>TRSFishingHandler.FindSpot<a class="headerlink" href="#trsfishinghandler-findspot" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSFishingHandler</span><span class="o">.</span><span class="nf">FindSpot</span><span class="p">(</span><span class="n">out</span><span class="w"> </span><span class="n">atpa</span><span class="o">:</span><span class="w"> </span><span class="n">T2DPointArray</span><span class="o">;</span><span class="w"> </span><span class="n">waitTime</span><span class="o">:</span><span class="w"> </span><span class="n">Int32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">350</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSFishingHandler</span><span class="o">.</span><span class="nf">FindSpot</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span><span class="w">  </span><span class="n">overload</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Find fishing spots on the mainscreen. Optionally return at ATPA of the found spots.</p>
+<section id="id3">
+<h3>Example<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">var</span>
+<span class="w">  </span><span class="n">atpa</span><span class="o">:</span><span class="w"> </span><span class="n">T2DPointArray</span><span class="o">;</span>
+<span class="k">begin</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="n">TRSFishingHandler</span><span class="o">.</span><span class="n">FindSpot</span><span class="p">(</span><span class="n">atpa</span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="c1">//TRSFishingHandler.FindSpot() returns true/false.</span>
+<span class="w">    </span><span class="n">ShowOnClient</span><span class="p">(</span><span class="n">atpa</span><span class="p">)</span><span class="o">;</span>
+<span class="k">end</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="trsfishinghandler-waitspot">
+<h2>TRSFishingHandler.WaitSpot<a class="headerlink" href="#trsfishinghandler-waitspot" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSFishingHandler</span><span class="o">.</span><span class="nf">WaitSpot</span><span class="p">(</span><span class="n">out</span><span class="w"> </span><span class="n">atpa</span><span class="o">:</span><span class="w"> </span><span class="n">T2DPointArray</span><span class="o">;</span><span class="w"> </span><span class="n">waitTime</span><span class="o">:</span><span class="w"> </span><span class="n">Int32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">350</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSFishingHandler</span><span class="o">.</span><span class="nf">WaitSpot</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span><span class="w">  </span><span class="n">overload</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Wait for fishing spots on the mainscreen. Optionally return at ATPA of the found spots.</p>
+<section id="id4">
+<h3>Example<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">var</span>
+<span class="w">  </span><span class="n">atpa</span><span class="o">:</span><span class="w"> </span><span class="n">T2DPointArray</span><span class="o">;</span>
+<span class="k">begin</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="n">RSFishingHandler</span><span class="o">.</span><span class="n">WaitSpot</span><span class="p">(</span><span class="n">atpa</span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="c1">//TRSFishingHandler.FindSpot() returns true/false.</span>
+<span class="w">    </span><span class="n">ShowOnClient</span><span class="p">(</span><span class="n">atpa</span><span class="p">)</span><span class="o">;</span>
+<span class="k">end</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="trsfishinghandler-spotmoved">
+<h2>TRSFishingHandler.SpotMoved<a class="headerlink" href="#trsfishinghandler-spotmoved" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSFishingHandler</span><span class="o">.</span><span class="nf">SpotMoved</span><span class="p">(</span><span class="n">out</span><span class="w"> </span><span class="n">atpa</span><span class="o">:</span><span class="w"> </span><span class="n">T2DPointArray</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSFishingHandler</span><span class="o">.</span><span class="nf">SpotMoved</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span><span class="w">  </span><span class="n">overload</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Check if TRSFishingHandler.CurrentSpot moved.</p>
+<section id="id5">
+<h3>Example<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="nb">WriteLn</span><span class="w"> </span><span class="n">TRSFishingHandler</span><span class="o">.</span><span class="n">SpotMoved</span><span class="p">()</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="trsfishinghandler-stoppedfishing">
+<h2>TRSFishingHandler._StoppedFishing<a class="headerlink" href="#trsfishinghandler-stoppedfishing" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSFishingHandler</span><span class="o">.</span><span class="nf">_StoppedFishing</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Internal helper method to check for quick things that guarantee us we are not fishing anymore.</p>
+</section>
+<hr class="docutils" />
+<section id="trsfishinghandler-checkfishing">
+<h2>TRSFishingHandler.CheckFishing<a class="headerlink" href="#trsfishinghandler-checkfishing" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSFishingHandler</span><span class="o">.</span><span class="nf">CheckFishing</span><span class="p">(</span><span class="n">out</span><span class="w"> </span><span class="n">atpa</span><span class="o">:</span><span class="w"> </span><span class="n">T2DPointArray</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSFishingHandler</span><span class="o">.</span><span class="nf">CheckFishing</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span><span class="w">  </span><span class="n">overload</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Check if we are still fishing. This function could give false positives but it’s extremely unlikely.
+To determine if we are still fishing it does the following:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Check if TRSFishingHandler.CurrentSpot (which is the last spot we clicked) has moved.</p></li>
+<li><p>Check if the inventory is full.</p></li>
+<li><p>Check if we leveled up.</p></li>
+<li><p>Check if TRSFishingHandler.Timer has reached it’s end. The time lasts anywhere between 40 seconds and 70 seconds randomly
+and it’s reset everytime this is called and we earned XP.</p></li>
+</ul>
+</div></blockquote>
+<section id="id6">
+<h3>Example<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="nb">WriteLn</span><span class="w"> </span><span class="n">TRSFishingHandler</span><span class="o">.</span><span class="n">CheckFishing</span><span class="p">()</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="trsfishinghandler-facingwater">
+<h2>TRSFishingHandler.FacingWater<a class="headerlink" href="#trsfishinghandler-facingwater" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSFishingHandler</span><span class="o">.</span><span class="nf">FacingWater</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Check if we have water directly north, west, south or east of us.</p>
+<section id="id7">
+<h3>Example<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="nb">WriteLn</span><span class="w"> </span><span class="n">TRSFishingHandler</span><span class="o">.</span><span class="n">FacingWater</span><span class="p">()</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="trsfishinghandler-clickspot">
+<h2>TRSFishingHandler.ClickSpot<a class="headerlink" href="#trsfishinghandler-clickspot" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSFishingHandler</span><span class="o">.</span><span class="nf">ClickSpot</span><span class="p">(</span><span class="n">out</span><span class="w"> </span><span class="n">atpa</span><span class="o">:</span><span class="w"> </span><span class="n">T2DPointArray</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span>
+<span class="k">function</span><span class="w"> </span><span class="nc">TRSFishingHandler</span><span class="o">.</span><span class="nf">ClickSpot</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span><span class="w">  </span><span class="n">overload</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Click the closest fishing spot to the player and switches TRSFishingHandler to “IsFishing”.
+We can check if we are still fishing with TRSFishingHandler.CheckFishing().</p>
+<section id="id8">
+<h3>Example<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="n">TRSFishingHandler</span><span class="o">.</span><span class="n">ClickSpot</span><span class="p">()</span><span class="o">;</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="combathandler.html" class="btn btn-neutral float-left" title="CombatHandler" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pohhandler.html" class="btn btn-neutral float-right" title="POHHandler" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, WaspBots.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
+
+</body>
+</html>

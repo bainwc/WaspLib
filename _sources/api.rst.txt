@@ -1,0 +1,352 @@
+
+API
+===
+Methods related to wasp-api.
+
+
+------------
+
+type StatsPayload
+~~~~~~~~~~~~~~~~~
+
+Type to help you handle stats submissions.
+
+
+------------
+
+StatsPayload.Reset
+~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ procedure StatsPayload.Reset();
+
+Resets StatsPayload. Automatically called by APIClient.SubmitStats() on a successful stats submission.
+
+
+------------
+
+StatsPayload.SetUsername
+~~~~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ procedure StatsPayload.SetUsername(user: String = '');
+
+Sets StatsPayload username if it hasn't been set yet.
+
+
+------------
+
+StatsPayload.Setup
+~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ procedure StatsPayload.Setup(id, pw: String; user: String = '');  static;
+
+Sets StatsPayload up.
+  - **id** should be your script id. If the script id is not in waspscripts.com database the submission will be rejected.
+  - **pw** should be your account password. Passwordless accounts can exist but then anyone can submit data to them.
+    A passwordless account will take in the first ever password submission it gets as it's password and will only accept future data
+    if that password is included.
+  - **user** sets a wasp-stats username.
+
+
+------------
+
+StatsPayload.Update
+~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ procedure StatsPayload.Update(xp, gp, time: Int32);  static;
+
+Update StatsPayload data for the next submission.
+You can update it several times before submitting it, however, keep in mind if the runtime is over 15mins the data will be rejected to
+avoid exploitation.
+Experience, Gold and Levels also have a limit of how much can be submitted on each request. This limit set by the scripter in waspscripts.com (not implemented yet... currently has some generous limits)
+
+You can set the account as banned for tracking ban rates but it's not fully implemented yet.
+If you set an account as banned you won't be able to submit more data to it until you set it as unbanned.
+
+
+------------
+
+StatsPayload.FormData
+~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function StatsPayload.FormData(): TStringArray; static;
+
+Transforms the data in StatsPayload into a TStringArray that can be used by a APIClient.
+
+
+------------
+
+type APIClient
+~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+
+  type APIClient = record(TSRLBaseRecord) class var
+    Disabled: Boolean;
+    HTTPClient: Int32;
+    StatsServer: String;
+    UUID: String;
+    Timer: TCountDown;
+    TimeStamp: UInt64;
+    IsSetup: Boolean;
+    Benchmark: TIntegerArray;
+    Fails: Int32;
+  end;
+
+Type responsible for stats submissions.
+This is basically a simba wrapper for the waspscripts API.
+
+You can find the API docs in https://api.waspscripts.com/docs if you need to read them
+but the APIClient should be able to do everything for you.
+
+
+------------
+
+APIClient.Terminate
+~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ procedure APIClient.Terminate();  static;
+
+Internal method automatically called on script termination.
+
+
+------------
+
+APIClient.Setup
+~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ procedure APIClient.Setup(); static;
+
+Internal method automatically called when attempting to use APIClient.GET() and APIClient.POST().
+
+
+------------
+
+APIClient.GetUUID
+~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function APIClient.GetUUID(): String; static;
+
+Returns your UUID
+
+Example
+-------
+.. code-block:: pascal  
+
+  WriteLn APIClient.GetUUID();
+
+
+------------
+
+APIClient.SetLocal
+~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ procedure APIClient.SetLocal(port: Int32 = 8080); static;
+
+Method only meant to be used if you are hosting a local stats server for debugging purposes.
+
+
+------------
+
+APIClient.GET
+~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function APIClient.GET(route: String; verbose: Boolean = True): String; static;
+
+Makes a GET request to the WaspScripts API in the specified **route**.
+You probably don't need to use this method directly.
+
+
+
+------------
+
+APIClient.POST
+~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function APIClient.POST(route: String; payload: TStringArray): String; static;
+
+Makes a POST request to the WaspScripts API in the specified **route**.
+**payload** is an array of string with the following format:
+  ['var1=value1', 'var2=value2', ...]
+
+You probably don't need to use this method directly.
+
+
+------------
+
+APIClient.HashPassword
+~~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function APIClient.HashPassword(password: String): String; static;
+
+Returns a salted and hashed password.
+This serves no purpose other than giving you a glimpse of what is stored in waspscripts database when you submit your password.
+
+Try the example below, notice how everytime you run it you will have slightly different results.
+That's the magic of "salting" passwords. You can read more about it on the wikipedia https://en.wikipedia.org/wiki/Salt_(cryptography).
+
+Example
+-------
+.. code-block:: pascal  
+
+  WriteLn APIClient.HashPassword('helloworld');
+  WriteLn APIClient.HashPassword(StatsPayload.Password);
+
+
+------------
+
+APIClient.CheckPassword
+~~~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function APIClient.CheckPassword(uuid: String; password: String): Boolean; static;
+
+Simply returns true/false if the **password** you submit matches what is stored in waspscripts stats database for the specified **uuid**.
+
+Example
+-------
+.. code-block:: pascal  
+
+  WriteLn APIClient.CheckPassword('0.999999999999999', 'helloworld');
+  WriteLn APIClient.CheckPassword(APIClient.Generateuuid(), APIClient.GeneratePassword());
+
+
+------------
+
+APIClient.UpdatePassword
+~~~~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function APIClient.UpdatePassword(uuid: String; password, newPassword: String): Boolean; static;
+
+Because users passwords can be changed and that's what are used by default for
+stats password a way to update the stats password is required.
+That's what this method is for.
+
+This will probably be complicated for regular users but an easier way can be
+figured out in the future.
+
+Example
+-------
+.. code-block:: pascal  
+
+  const
+    PASSWORD:     String = 'old_password';
+    NEW_PASSWORD: String = 'new_password';
+  begin
+    APIClient.UpdatePassword(APIClient.UUID, PASSWORD, NEW_PASSWORD);
+  end.
+ 
+
+------------
+
+APIClient.CheckStats
+~~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function APIClient.CheckStats(uuid: string): String; static;
+
+Returns the stats of the specified **uuid**.
+
+Example
+-------
+.. code-block:: pascal  
+
+  WriteLn APIClient.CheckStats('0.999999999999999');
+  WriteLn APIClient.CheckStats(APIClient.Generateuuid());
+
+
+------------
+
+APIClient.SubmitStats
+~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function APIClient.SubmitStats(uuid: String): Boolean; static;
+
+Method to submit stats to wasp-stats with the help of **StatsPayload**.
+
+Example
+-------
+.. code-block:: pascal  
+
+  StatsPayload.Setup('SCRIPT_ID_HERE', APIClient.GeneratePassword());
+  StatsPayload.Update(100, 100, 5000);
+  WriteLn APIClient.SubmitStats(APIClient.Generateuuid());
+
+
+------------
+
+APIClient.GetScript
+~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ APIClient.GetScript(script_id: String; verbose: Boolean = False): String; static;
+
+Retrieves info of the script with the specified **script_id** from https://api.waspscripts.com
+
+Example
+-------
+.. code-block:: pascal  
+
+  APIClient.GetScript('cf0a01e4-8d20-41c2-a78e-3d83081b388d');
+
+
+------------
+
+APIClient.GetScriptRevision
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function APIClient.GetScriptRevision(script_id: String; verbose: Boolean = False): Int32; static;
+
+Retrieves the latest revision number of the script with the specified **script_id** from https://api.waspscripts.com
+
+Example
+-------
+.. code-block:: pascal  
+
+  WriteLn APIClient.GetScriptRevision('cf0a01e4-8d20-41c2-a78e-3d83081b388d');
+
+
+------------
+
+APIClient.GetVersion
+~~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function APIClient.GetVersion(pkg: String; verbose: Boolean = False): String; static;
+
+Retrieves the latest version of the package specified from https://api.waspscripts.com.
+
+Example
+-------
+.. code-block:: pascal  
+
+  WriteLn APIClient.GetVersion('srl-t');
+  WriteLn APIClient.GetVersion('wasplib');
+
+
+------------
+
+APIClient.GetAllVersions
+~~~~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ function APIClient.GetAllVersions(script_id: String; out revision, srltVersion, wlVersion: String; verbose: Boolean = False): String; static;
+
+Retrieves the latest script revison of **script_id** and the latest SRL-T and WaspLib versions https://api.waspscripts.com.
+
+
+------------

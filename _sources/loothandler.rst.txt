@@ -1,0 +1,7 @@
+
+LootHandler
+===========
+LootHandler is a record made to handle looting.
+
+
+------------

@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BaseScript &mdash; WaspLib  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="antiban.html" />
+    <link rel="prev" title="RSClient" href="rsclient.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            WaspLib
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="webber.html">Tool Webber</a></li>
+<li class="toctree-l1"><a class="reference internal" href="map_maker.html">MapMaker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getobject.html">Tool GetObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="codetester.html">Tool CodeTester</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monster_maker.html">PolygonMaker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polygon_maker.html">PolygonMaker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getpos.html">Tool GetPos</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="optional.html">Optional Files</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="biometrics.html">Biometrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="color.html">Color</a></li>
+<li class="toctree-l1"><a class="reference internal" href="math.html">Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utiltypes.html">Utility types, contants and variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cacheparser.html">RSCacheParser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="misc.html">Misc</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="recorder.html">Recorder</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mousezoom.html">MouseZoom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="remoteinput.html">RemoteInput</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mouse.html">Mouse</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="data.html">Data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="formutils.html">Form Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scriptform.html">ScriptForm</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tpoint.html">TPoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcuboid.html">Cuboids</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tpointarray.html">TPointArray</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="consumables.html">Consumables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="items.html">Items Extensions</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="mm2ms.html">MM2MS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="progress.html">ProgressReport</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dotfilters.html">DotFilters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basestats.html">BaseStats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rsclient.html">RSClient</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">BaseScript</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#type-tbasescript">type TBaseScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basescript-shouldhandlepaint">BaseScript.ShouldHandlePaint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basescript-shoulddrawpaint">BaseScript.ShouldDrawPaint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basescript-buildtextreport">BaseScript.BuildTextReport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basescript-printreport">BaseScript.PrintReport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#checkupdates">CheckUpdates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basescript-init">BaseScript.Init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basescript-doantiban">BaseScript.DoAntiban</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basescript-shouldstop">BaseScript.ShouldStop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#type-tbasewalkerscript">type TBaseWalkerScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basewalkerscript-init">BaseWalkerScript.Init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#type-tbasebankscript">type TBaseBankScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basebankscript-init">BaseBankScript.Init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basebankscript-terminate">BaseBankScript.Terminate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basebankscript-countitemsleft">BaseBankScript.CountItemsLeft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basebankscript-shouldhoverbank">BaseBankScript.ShouldHoverBank</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basebankscript-hoverbank">BaseBankScript.HoverBank</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basebankscript-withdraw">BaseBankScript.Withdraw</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basebankscript-deposititem">BaseBankScript.DepositItem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basebankscript-deposititems">BaseBankScript.DepositItems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basebankscript-handlecollectbox">BaseBankScript.HandleCollectBox</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="login.html">Login</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpdrop.html">XPDrop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpbar.html">XPDrop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="minimap.html">Minimap</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="xpbarsetup.html">XPBar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bankpin.html">BankPin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="depositbox.html">DepositBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bank.html">BankPin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mainscreen.html">MainScreen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collectbox.html">CollectBox</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="magic.html">Magic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="worldhopper.html">TRSWorldHopper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logout.html">Logout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inventory.html">Inventory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anvil.html">Anvil</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="chat.html">Chat.LeveledUp</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="consumablehandler.html">ConsumableHandlers</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="itemfinder.html">ItemFinder</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="walker.html">Walker</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="walkerobjects.html">TRSWalkerObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rsmonster.html">RSMonters</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="craftscreen.html">CraftScreen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="silverscreen.html">SilverScreen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fairyring.html">FairyRing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="furniturebuilder.html">FurnitureBuilder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="driftnet.html">TRSDriftNet.BankOverlayOpen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="driftnet.html#trsdriftnet-destroyoverlayopen">TRSDriftNet.DestroyOverlayOpen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="driftnet.html#trsdriftnet-hasoverlay">TRSDriftNet.HasOverlay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="driftnet.html#trsdriftnet-getslotboxes">TRSDriftNet.GetSlotBoxes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="driftnet.html#trsdriftnet-getbuttons">TRSDriftNet.GetButtons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="driftnet.html#trsdriftnet-getbutton">TRSDriftNet.GetButton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anvil%28optional_interfaces_mainscreen%29.html">Anvil</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="consumablehandler%28optional_handlers%29.html">ConsumableHandlers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="combathandler.html">CombatHandler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rsfishinghandler.html">TRSFishingHandler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pohhandler.html">POHHandler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="loothandler.html">LootHandler</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">WaspLib</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">BaseScript</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/basescript.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="basescript">
+<h1>BaseScript<a class="headerlink" href="#basescript" title="Link to this heading"></a></h1>
+<p>BaseScript and it’s derivants are template records to be used in scripts.
+They also contain template functions and procedures that can be used as is or overriden with
+“inherited” to add functionality.</p>
+<hr class="docutils" />
+<section id="type-tbasescript">
+<h2>type TBaseScript<a class="headerlink" href="#type-tbasescript" title="Link to this heading"></a></h2>
+<p>Record that holds common variables for most basic scripts.
+The variables that are part of <strong>TBaseScript</strong> are the following:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Name</strong>: String that holds the script name to be displayed in the log and on screen progress report.</p></li>
+<li><p><strong>Version</strong>: String that holds the script version to be displayed in the log and on screen progress report.</p></li>
+<li><p><strong>Self.IsSetup</strong>: Boolean that let us know if the our <strong>TBaseScript</strong> already set it’s variables up.</p></li>
+<li><p><strong>TimeRunning</strong>: TStopwatch variable that holds how long our <strong>TBaseScript</strong> has been running.</p></li>
+<li><p><strong>Action</strong>: String variable used to print in Simba output or on screen progress report the current action the script is performing.</p></li>
+<li><p><strong>PreviousAction</strong>: String variable used to register the previous action. This is used to avoid spamming the logs.</p></li>
+<li><p><strong>ExtraInfo</strong>: String variable we can use to print extra information in Simba output or in on screen progress report. E.G. current state of variables.</p></li>
+<li><p><strong>ActionProfit</strong>: Integer that holds information on how much profit (positive or negative) our script makes per action performed.</p></li>
+<li><p><strong>TotalActions</strong>: Integer used to count how many actions our script has done.</p></li>
+<li><p><strong>TotalProfit</strong>:  Integer that holds the total profit our script has done.</p></li>
+<li><p><strong>TimeLimit</strong>: Integer variable to set a time limit for our script in milliseconds before ending the current script.</p></li>
+<li><p><strong>ActionLimit</strong>: Integer variable to set total action limit before ending the script.</p></li>
+</ul>
+</div></blockquote>
+<p>TBaseScript can be used as is or inherited from to extend it’s functionality.</p>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Link to this heading"></a></h3>
+</section>
+</section>
+<hr class="docutils" />
+<section id="basescript-shouldhandlepaint">
+<h2>BaseScript.ShouldHandlePaint<a class="headerlink" href="#basescript-shouldhandlepaint" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TBaseScript</span><span class="o">.</span><span class="nf">ShouldHandlePaint</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Wrapper function used internally to decide if we should handle TWaspProgressReport.</p>
+</section>
+<hr class="docutils" />
+<section id="basescript-shoulddrawpaint">
+<h2>BaseScript.ShouldDrawPaint<a class="headerlink" href="#basescript-shoulddrawpaint" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TBaseScript</span><span class="o">.</span><span class="nf">ShouldDrawPaint</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Wrapper function used internally to decide if we should call TWaspProgressReport.Update().
+To avoid unnecessary redraw, when Self.Action and Self.PreviousAction are the same, we do not redraw.</p>
+</section>
+<hr class="docutils" />
+<section id="basescript-buildtextreport">
+<h2>BaseScript.BuildTextReport<a class="headerlink" href="#basescript-buildtextreport" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TBaseScript</span><span class="o">.</span><span class="nf">BuildTextReport</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="n">TStringArray</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Internal method used to build our text progress report.
+To set custom messages simply override this method and pass in each line of you report into the Result array.
+Keep in mind that editing this will probably mess up the HUD report so if you customize this you should also customize <strong>TBaseScript.BuildHUDReport()</strong>.</p>
+<section id="id1">
+<h3>Example<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TBaseScript</span><span class="o">.</span><span class="nf">BuildTextReport</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="n">TStringArray</span><span class="o">;</span><span class="w"> </span><span class="kp">override</span><span class="o">;</span>
+<span class="k">var</span>
+<span class="w">  </span><span class="n">ElapsedTime</span><span class="o">:</span><span class="w"> </span><span class="n">UInt64</span><span class="o">;</span>
+<span class="w">  </span><span class="n">XPEarned</span><span class="o">:</span><span class="w"> </span><span class="n">Int32</span><span class="o">;</span>
+<span class="k">begin</span>
+<span class="w">  </span><span class="n">ElapsedTime</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">Self</span><span class="o">.</span><span class="n">TimeRunning</span><span class="o">.</span><span class="n">ElapsedTime</span><span class="p">()</span><span class="o">;</span>
+<span class="w">  </span><span class="n">XPEarned</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">WL</span><span class="o">.</span><span class="n">PreviousXP</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">WL</span><span class="o">.</span><span class="n">InitialXP</span><span class="o">;</span>
+
+<span class="w">  </span><span class="c1">//Keep in mind this is just a quick example without spacing adjustments. This won&#39;t look good unless you add some variable padding.</span>
+
+<span class="w">  </span><span class="bp">Result</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">&#39;[===============================]&#39;</span><span class="o">;</span>
+<span class="w">  </span><span class="bp">Result</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">&#39;[ &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">Self</span><span class="o">.</span><span class="n">Name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&#39; ]&#39;</span><span class="o">;</span><span class="w">                    </span><span class="c1">//Self.Name is the script name, usually set in TBaseScript.Init();</span>
+<span class="w">  </span><span class="bp">Result</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">&#39;[===============================]&#39;</span><span class="o">;</span>
+<span class="w">  </span><span class="bp">Result</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">&#39;[ Runtime    :  &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">SRL</span><span class="o">.</span><span class="n">MsToTime</span><span class="p">(</span><span class="n">ElapsedTime</span><span class="o">,</span><span class="w"> </span><span class="n">Time_Short</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="s">&#39; ];</span>
+<span class="s">  Result += &#39;</span><span class="p">[</span><span class="w"> </span><span class="n">Xp</span><span class="w"> </span><span class="n">gained</span><span class="w">  </span><span class="o">:</span><span class="w"> </span><span class="s">&#39; + XPEarned + &#39;</span><span class="p">(</span><span class="s">&#39; + ToStr(NumberPerHour(XPEarned, ElapsedTime)) + &#39;</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">hr</span><span class="p">)</span><span class="w">     </span><span class="p">]</span><span class="s">&#39;;</span>
+<span class="s">  Result += &#39;</span><span class="p">[</span><span class="w"> </span><span class="n">Nuggets</span><span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="s">&#39; + NuggetsCount + &#39;</span><span class="p">(</span><span class="s">&#39; + ToStr(NumberPerHour(NuggetsCount, ElapsedTime)) + &#39;</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">hr</span><span class="p">)</span><span class="w">     </span><span class="p">]</span><span class="s">&#39;;</span>
+<span class="s">  Result += &#39;</span><span class="p">[</span><span class="w"> </span><span class="n">Coal</span><span class="w">       </span><span class="o">:</span><span class="w"> </span><span class="s">&#39; + CoalCount + &#39;</span><span class="p">(</span><span class="s">&#39; + ToStr(NumberPerHour(CoalCount, ElapsedTime)) + &#39;</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">hr</span><span class="p">)</span><span class="w">     </span><span class="p">]</span><span class="s">&#39;;</span>
+<span class="s">  Result += &#39;</span><span class="p">[</span><span class="w"> </span><span class="n">Gold</span><span class="w">       </span><span class="o">:</span><span class="w"> </span><span class="s">&#39; + GoldCount + &#39;</span><span class="p">(</span><span class="s">&#39; + ToStr(NumberPerHour(GoldCount, ElapsedTime)) + &#39;</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">hr</span><span class="p">)</span><span class="w">     </span><span class="p">]</span><span class="s">&#39;;</span>
+<span class="s">  Result += &#39;</span><span class="p">[</span><span class="w"> </span><span class="n">Mithril</span><span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="s">&#39; + MithrilCount + &#39;</span><span class="p">(</span><span class="s">&#39; + ToStr(NumberPerHour(MithrilCount, ElapsedTime)) + &#39;</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">hr</span><span class="p">)</span><span class="w">     </span><span class="p">]</span><span class="s">&#39;;</span>
+<span class="s">  Result += &#39;</span><span class="p">[</span><span class="w"> </span><span class="n">Adamantite</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&#39; + AdamantiteCount + &#39;</span><span class="p">(</span><span class="s">&#39; + ToStr(NumberPerHour(AdamantiteCount, ElapsedTime)) + &#39;</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">hr</span><span class="p">)</span><span class="w">     </span><span class="p">]</span><span class="s">&#39;;</span>
+<span class="s">  Result += &#39;</span><span class="p">[</span><span class="w"> </span><span class="n">Runite</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="s">&#39; + RuniteCount + &#39;</span><span class="p">(</span><span class="s">&#39; + ToStr(NumberPerHour(RuniteCount, ElapsedTime)) + &#39;</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">hr</span><span class="p">)</span><span class="w">     </span><span class="p">]</span><span class="s">&#39;;</span>
+<span class="s">  Result += &#39;</span><span class="p">[</span><span class="o">===============================</span><span class="p">]</span><span class="s">&#39;;</span>
+<span class="s">  Result += &#39;</span><span class="p">[</span><span class="w"> </span><span class="s">&#39; + Self.Name + SRL.MsToTime(ShutdownTimer.TimeRemaining, Time_Short) + &#39;</span><span class="w"> </span><span class="p">]</span><span class="s">&#39;;</span>
+<span class="s">  Result += &#39;</span><span class="p">[</span><span class="o">===============================</span><span class="p">]</span><span class="s">&#39;;</span>
+<span class="s">end;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="basescript-printreport">
+<h2>BaseScript.PrintReport<a class="headerlink" href="#basescript-printreport" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">procedure</span><span class="w"> </span><span class="nc">TBaseScript</span><span class="o">.</span><span class="nf">PrintReport</span><span class="p">(</span><span class="n">Sender</span><span class="o">:</span><span class="w"> </span><span class="kt">TObject</span><span class="p">)</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Internal method to print our progress report (“proggie”).
+This is run on a timer setup by TBaseScript and also handles drawing the HUD progress report if it is enabled.
+It also is responsible for debugging the script with SRL.Debug() if we enable it.</p>
+</section>
+<hr class="docutils" />
+<section id="checkupdates">
+<h2>CheckUpdates<a class="headerlink" href="#checkupdates" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">procedure</span><span class="w"> </span><span class="nf">CheckUpdates</span><span class="p">(</span><span class="n">caption</span><span class="o">:</span><span class="w"> </span><span class="k">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;Updates Available&#39;</span><span class="p">)</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Checks for updates for SRL-T, WaspLib and the current script.</p>
+</section>
+<hr class="docutils" />
+<section id="basescript-init">
+<h2>BaseScript.Init<a class="headerlink" href="#basescript-init" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">procedure</span><span class="w"> </span><span class="nc">TBaseScript</span><span class="o">.</span><span class="nf">Init</span><span class="p">(</span><span class="n">maxActions</span><span class="o">:</span><span class="w"> </span><span class="n">UInt32</span><span class="o">;</span><span class="w"> </span><span class="n">maxTime</span><span class="o">:</span><span class="w"> </span><span class="n">UInt64</span><span class="p">)</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Method used to setup the variables of TBaseScript.
+If <strong>maxActions</strong> and/or <strong>maxTime</strong> are not 0 that will make
+<cite>TBaseScript.ShouldStop() = True</cite> when <cite>TBaseScript.TotalActions = maxAtions</cite> or
+<cite>TBaseScript.TimeRunning.ElapsedTime = maxTime</cite>.</p>
+<p>Can be used as is or overriden to do additional tasks.</p>
+<section id="id2">
+<h3>Example<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">var</span>
+<span class="w">  </span><span class="n">Script</span><span class="o">:</span><span class="w"> </span><span class="n">TBaseScript</span><span class="o">;</span>
+
+<span class="k">begin</span>
+<span class="w">  </span><span class="n">Script</span><span class="o">.</span><span class="n">Init</span><span class="p">(</span><span class="mi">0</span><span class="o">,</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">ONE_DAY</span><span class="p">)</span><span class="o">;</span>
+<span class="k">end</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="basescript-doantiban">
+<h2>BaseScript.DoAntiban<a class="headerlink" href="#basescript-doantiban" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TBaseScript</span><span class="o">.</span><span class="nf">DoAntiban</span><span class="p">(</span><span class="n">checkBreaks</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">True</span><span class="o">;</span><span class="w"> </span><span class="n">checkSleeps</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">True</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Method used to call Antiban.DoAntiban(checkBreaks, checkSleeps).</p>
+<section id="id3">
+<h3>Example<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="n">Script</span><span class="o">.</span><span class="n">DoAntiban</span><span class="p">()</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="basescript-shouldstop">
+<h2>BaseScript.ShouldStop<a class="headerlink" href="#basescript-shouldstop" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TBaseScript</span><span class="o">.</span><span class="nf">ShouldStop</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Method used to check if we reached the TBaseScript goals and it’s time to stop it.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This doesn’t stop the script. This simply returns true/false when called and it’s up to you to stop the script.</p>
+</div>
+<section id="id4">
+<h3>Example<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="n">Script</span><span class="o">.</span><span class="n">ShouldStop</span><span class="p">()</span><span class="w"> </span><span class="k">then</span>
+<span class="w">  </span><span class="n">TerminateScript</span><span class="p">()</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="type-tbasewalkerscript">
+<h2>type TBaseWalkerScript<a class="headerlink" href="#type-tbasewalkerscript" title="Link to this heading"></a></h2>
+<p>Record that holds common variables for most scripts that use walker.
+This record extends <strong>TBaseScript</strong> and has all of it’s variables too.
+The extra variables that are part of <strong>TBaseWalkerScript</strong> are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>RSW</strong>: TRSWalker variable that holds our walker, for more information check the following page: <a class="reference external" href="https://ollydev.github.io/SRL-Development/walker.html?highlight=walker">https://ollydev.github.io/SRL-Development/walker.html?highlight=walker</a></p></li>
+</ul>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="basewalkerscript-init">
+<h2>BaseWalkerScript.Init<a class="headerlink" href="#basewalkerscript-init" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">procedure</span><span class="w"> </span><span class="nc">TBaseWalkerScript</span><span class="o">.</span><span class="nf">Init</span><span class="p">(</span><span class="n">MaxActions</span><span class="o">:</span><span class="w"> </span><span class="n">Int32</span><span class="o">;</span><span class="w"> </span><span class="n">MaxTime</span><span class="o">:</span><span class="w"> </span><span class="kt">Int64</span><span class="p">)</span><span class="o">;</span><span class="w"> </span><span class="kp">override</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Method used to setup the variables of TBaseScript.
+If <strong>MaxActions</strong> and <strong>MaxTime</strong> serve the same purpose of TBaseScript.Init().</p>
+<p>Can be used as is or overriden to do additional tasks.</p>
+</section>
+<hr class="docutils" />
+<section id="type-tbasebankscript">
+<h2>type TBaseBankScript<a class="headerlink" href="#type-tbasebankscript" title="Link to this heading"></a></h2>
+<p>Record that holds common variables for most scripts that use a bank.
+This record inherits from <strong>TBaseWalkerScript</strong> and which inherits from <strong>TBaseScript’s</strong>.
+The extra variables that are part of <strong>TBaseBankScript</strong> are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Self.ScriptBank</strong>: PRSObject pointer that points to our current bank TRSObject, for more info check: <a class="reference external" href="https://torwent.github.io/WaspLib/waspobject.html#type-trsobject">https://torwent.github.io/WaspLib/waspobject.html#type-trsobject</a></p></li>
+<li><p><strong>Self.ScriptBanker</strong>: PRSNPC pointer that points to our current banker TRSNPC, for more info check: <a class="reference external" href="https://torwent.github.io/WaspLib/waspobject.html#type-trsmmdot">https://torwent.github.io/WaspLib/waspobject.html#type-trsmmdot</a></p></li>
+<li><p><strong>BankTab</strong>: Integer variable used to cache the current bank tab that contains items for our script.</p></li>
+<li><p><strong>ItemLeftAmount</strong>: Integer variable used to cache items left to make/build/whatever to pre-hover the bank.</p></li>
+<li><p><strong>HoveringBank</strong>: Boolean variable that holds information if we are currently already hovering the bank. This is so we don’t try to rehover the bank and don’t need to check the uptext if we already are doing it.</p></li>
+<li><p><strong>BankEmpty</strong>: Boolean variable that that is set to true when we ran out of an item our script needs. This is used so next time we need to fetch the item we check the deposit box instead.</p></li>
+<li><p><strong>CollectEmpty</strong>: Boolean variable that that is set to true when the collect box is empty. Normally, if this and <strong>BankEmpty</strong> are true the script ends.</p></li>
+<li><p><strong>CollectTimer</strong>: TCountDown variable used to reset <strong>CollectEmpty</strong> after a couple of minutes.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="basebankscript-init">
+<h2>BaseBankScript.Init<a class="headerlink" href="#basebankscript-init" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">procedure</span><span class="w"> </span><span class="nc">TBaseBankScript</span><span class="o">.</span><span class="nf">Init</span><span class="p">(</span><span class="n">MaxActions</span><span class="o">:</span><span class="w"> </span><span class="n">UInt32</span><span class="o">;</span><span class="w"> </span><span class="n">MaxTime</span><span class="o">:</span><span class="w"> </span><span class="n">UInt64</span><span class="p">)</span><span class="o">;</span><span class="w"> </span><span class="kp">override</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Method used to setup the variables of TBaseScript.
+If <strong>MaxActions</strong> and <strong>MaxTime</strong> serve the same purpose of TBaseScript.Init().</p>
+<p>Can be used as is or overriden to do additional tasks.</p>
+</section>
+<hr class="docutils" />
+<section id="basebankscript-terminate">
+<h2>BaseBankScript.Terminate<a class="headerlink" href="#basebankscript-terminate" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TBaseBankScript</span><span class="o">.</span><span class="nf">Terminate</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Helper method to be called at the end of the life cycle of a TBaseBankScript.
+By default it simply attempts to open the TBaseBankScript.CurrentBank but it’s meant to
+be overriden and inherited or completely be remade for proper termination of the TBaseBankScript.</p>
+<p>This is likely required if you want to chain several scripts together.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Consider taking a look at script_chainer.simba: <a class="reference external" href="https://github.com/Torwent/wasp-mini/blob/master/script_chainer.simba">https://github.com/Torwent/wasp-mini/blob/master/script_chainer.simba</a></p>
+</div>
+<section id="id5">
+<h3>Example<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="n">Script1</span><span class="o">.</span><span class="n">Init</span><span class="p">()</span><span class="o">;</span>
+<span class="k">repeat</span>
+<span class="w">  </span><span class="c1">//do stuff...</span>
+<span class="k">until</span><span class="w"> </span><span class="n">Script1</span><span class="o">.</span><span class="n">ShouldStop</span><span class="p">()</span><span class="o">;</span>
+
+<span class="n">Script1</span><span class="o">.</span><span class="n">Terminate</span><span class="p">()</span><span class="o">;</span>
+
+<span class="n">Script2</span><span class="o">.</span><span class="n">Init</span><span class="p">()</span><span class="o">;</span>
+<span class="k">repeat</span>
+<span class="w">  </span><span class="c1">//do stuff...</span>
+<span class="k">until</span><span class="w"> </span><span class="n">Script2</span><span class="o">.</span><span class="n">ShouldStop</span><span class="p">()</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="basebankscript-countitemsleft">
+<h2>BaseBankScript.CountItemsLeft<a class="headerlink" href="#basebankscript-countitemsleft" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">procedure</span><span class="w"> </span><span class="nc">TBaseBankScript</span><span class="o">.</span><span class="nf">CountItemsLeft</span><span class="p">(</span><span class="n">Item</span><span class="o">:</span><span class="w"> </span><span class="n">TRSItem</span><span class="p">)</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Set’s TBaseBankScript.ItemLeftAmount to be used by TBaseBankScript.ShouldHover().</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For some scripts this might need to be overriten and rewritten.</p>
+</div>
+</section>
+<hr class="docutils" />
+<section id="basebankscript-shouldhoverbank">
+<h2>BaseBankScript.ShouldHoverBank<a class="headerlink" href="#basebankscript-shouldhoverbank" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TBaseBankScript</span><span class="o">.</span><span class="nf">ShouldHoverBank</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Method used to decide if we should pre-hover the bank or not.
+It uses the amount of items left in the inventory stored by TBaseBankScript.CountItemsLeft()
+in TBaseBankScript.ItemLeftAmount() along with the player BioHash to decide if we want to
+pre-hover the bank.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function simply returns true/false and doesn’t actualy hover the bank.</p>
+</div>
+<section id="id6">
+<h3>Example<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="n">Script</span><span class="o">.</span><span class="n">ShouldHoverBank</span><span class="p">()</span><span class="w"> </span><span class="k">then</span>
+<span class="w">  </span><span class="n">Script</span><span class="o">.</span><span class="n">HoverBank</span><span class="p">()</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="basebankscript-hoverbank">
+<h2>BaseBankScript.HoverBank<a class="headerlink" href="#basebankscript-hoverbank" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TBaseBankScript</span><span class="o">.</span><span class="nf">HoverBank</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Moves the mouse to the closest RSObjects.Banks</p>
+<section id="id7">
+<h3>Example<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="n">BankScript</span><span class="o">.</span><span class="n">HoverBank</span><span class="p">()</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="basebankscript-withdraw">
+<h2>BaseBankScript.Withdraw<a class="headerlink" href="#basebankscript-withdraw" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TBaseBankScript</span><span class="o">.</span><span class="nf">Withdraw</span><span class="p">(</span><span class="n">item</span><span class="o">:</span><span class="w"> </span><span class="n">TRSBankWithdrawItem</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Withdraws <strong>item</strong> from the bank.</p>
+<section id="id8">
+<h3>Example<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
+</section>
+</section>
+<hr class="docutils" />
+<section id="basebankscript-deposititem">
+<h2>BaseBankScript.DepositItem<a class="headerlink" href="#basebankscript-deposititem" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TBaseBankScript</span><span class="o">.</span><span class="nf">DepositItem</span><span class="p">(</span><span class="n">out</span><span class="w"> </span><span class="n">item</span><span class="o">:</span><span class="w"> </span><span class="n">TRSBankItem</span><span class="o">;</span><span class="w"> </span><span class="n">isBank</span><span class="o">,</span><span class="w"> </span><span class="n">isDepositBox</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">False</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span>
+<span class="k">function</span><span class="w"> </span><span class="nc">TBaseBankScript</span><span class="o">.</span><span class="nf">DepositItem</span><span class="p">(</span><span class="n">item</span><span class="o">:</span><span class="w"> </span><span class="n">TRSItem</span><span class="o">;</span><span class="w"> </span><span class="n">isBank</span><span class="o">,</span><span class="w"> </span><span class="n">isDepositBox</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">False</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span><span class="w"> </span><span class="n">overload</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Deposits <strong>item</strong> in the bank through either the bank or deposit box depending on which one is open.</p>
+</section>
+<hr class="docutils" />
+<section id="basebankscript-deposititems">
+<h2>BaseBankScript.DepositItems<a class="headerlink" href="#basebankscript-deposititems" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TBaseBankScript</span><span class="o">.</span><span class="nf">DepositItem</span><span class="p">(</span><span class="n">out</span><span class="w"> </span><span class="n">items</span><span class="o">:</span><span class="w"> </span><span class="n">TRSBankItemArray</span><span class="o">;</span><span class="w"> </span><span class="n">isBank</span><span class="o">,</span><span class="w"> </span><span class="n">isDepositBox</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">False</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span>
+<span class="k">function</span><span class="w"> </span><span class="nc">TBaseBankScript</span><span class="o">.</span><span class="nf">DepositItems</span><span class="p">(</span><span class="n">item</span><span class="o">:</span><span class="w"> </span><span class="n">TRSItem</span><span class="o">;</span><span class="w"> </span><span class="n">isBank</span><span class="o">,</span><span class="w"> </span><span class="n">isDepositBox</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">False</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span><span class="w"> </span><span class="n">overload</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Deposits <strong>item</strong> in the bank through either the bank or deposit box depending on which one is open.</p>
+</section>
+<hr class="docutils" />
+<section id="basebankscript-handlecollectbox">
+<h2>BaseBankScript.HandleCollectBox<a class="headerlink" href="#basebankscript-handlecollectbox" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TBaseBankScript</span><span class="o">.</span><span class="nf">HandleCollectBox</span><span class="p">(</span><span class="n">items</span><span class="o">:</span><span class="w"> </span><span class="n">TRSItemArray</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Collects <strong>items</strong> from the collectbox.</p>
+<section id="id9">
+<h3>Example<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
+<hr class="docutils" />
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="rsclient.html" class="btn btn-neutral float-left" title="RSClient" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="antiban.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, WaspBots.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
+
+</body>
+</html>

@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TRSWalkerObject &mdash; WaspLib  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="RSMonters" href="rsmonster.html" />
+    <link rel="prev" title="Walker" href="walker.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            WaspLib
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="webber.html">Tool Webber</a></li>
+<li class="toctree-l1"><a class="reference internal" href="map_maker.html">MapMaker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getobject.html">Tool GetObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="codetester.html">Tool CodeTester</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monster_maker.html">PolygonMaker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polygon_maker.html">PolygonMaker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getpos.html">Tool GetPos</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="optional.html">Optional Files</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="biometrics.html">Biometrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="color.html">Color</a></li>
+<li class="toctree-l1"><a class="reference internal" href="math.html">Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utiltypes.html">Utility types, contants and variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cacheparser.html">RSCacheParser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="misc.html">Misc</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="recorder.html">Recorder</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mousezoom.html">MouseZoom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="remoteinput.html">RemoteInput</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mouse.html">Mouse</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="data.html">Data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="formutils.html">Form Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scriptform.html">ScriptForm</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tpoint.html">TPoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcuboid.html">Cuboids</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tpointarray.html">TPointArray</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="consumables.html">Consumables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="items.html">Items Extensions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mm2ms.html">MM2MS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="progress.html">ProgressReport</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dotfilters.html">DotFilters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basestats.html">BaseStats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rsclient.html">RSClient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basescript.html">BaseScript</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="login.html">Login</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpdrop.html">XPDrop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpbar.html">XPDrop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="minimap.html">Minimap</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="xpbarsetup.html">XPBar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bankpin.html">BankPin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="depositbox.html">DepositBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bank.html">BankPin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mainscreen.html">MainScreen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collectbox.html">CollectBox</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="magic.html">Magic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="worldhopper.html">TRSWorldHopper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logout.html">Logout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inventory.html">Inventory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anvil.html">Anvil</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="chat.html">Chat.LeveledUp</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="consumablehandler.html">ConsumableHandlers</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="itemfinder.html">ItemFinder</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="walker.html">Walker</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">TRSWalkerObject</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#how-do-they-work">How do they work?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#type-trswalkerobject">type TRSWalkerObject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#walker-click">Walker.Click</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trswalkerobject-setup">TRSWalkerObject._Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">TRSWalkerObject.Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trswalkerobject-getcuboidarray">TRSWalkerObject.GetCuboidArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trswalkerobject-findonmainscreen">TRSWalkerObject.FindOnMainScreen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trswalkerobject-onmainscreen">TRSWalkerObject.OnMainScreen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trswalkerobject-uptextcheck">TRSWalkerObject._UpTextCheck</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trswalkerobject-walkuptextcheck">TRSWalkerObject._WalkUpTextCheck</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trswalkerobject-clickhelper">TRSWalkerObject._ClickHelper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trswalkerobject-selecthelper">TRSWalkerObject._SelectHelper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#type-trsobject">type TRSObject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trsobject-setup">TRSObject.Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trsobject-findex">TRSObject.FindEx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trsobject-find">TRSObject.Find</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">TRSObject.Find</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trsobject-draw">TRSObject.Draw</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trsobject-savedebug">TRSObject.SaveDebug</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trsobject-updatetarget">TRSObject._UpdateTarget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trsobject-hoverhelper">TRSObject._HoverHelper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trsobject-walkhoverhelper">TRSObject._WalkHoverHelper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trsobject-prehoverhelper">TRSObject.PreHoverHelper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trsobject-hover">TRSObject.Hover</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trsobject-walkhover">TRSObject.WalkHover</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trsobject-click">TRSObject.Click</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trsobject-selectoption">TRSObject.SelectOption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trsobject-walkclick">TRSObject.WalkClick</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trsobject-walkselectoption">TRSObject.WalkSelectOption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#type-trsmmdot">type TRSMMDot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trsmmdot-setup">TRSMMDot.Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trsmmdot-getwmmpolys">TRSMMDot._GetWMMPolys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trsmmdot-getmmpolys">TRSMMDot._GetMMPolys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trsmmdot-getcuboidarray">TRSMMDot.GetCuboidArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trsmmdot-findex">TRSMMDot.FindEx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trsmmdot-find">TRSMMDot.Find</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trsmmdot-getbaserecord">TRSMMDot._GetBaseRecord</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trsmmdot-draw">TRSMMDot.Draw</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trsmmdot-savedebug">TRSMMDot.SaveDebug</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trsmmdot-updatetarget">TRSMMDot._UpdateTarget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trsmmdot-hoverhelper">TRSMMDot._HoverHelper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trsmmdot-walkhoverhelper">TRSMMDot._WalkHoverHelper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trsmmdot-hover">TRSMMDot.Hover</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trsmmdot-walkhover">TRSMMDot.WalkHover</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trsmmdot-click">TRSMMDot.Click</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trsmmdot-selectoption">TRSMMDot.SelectOption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trsmmdot-walkclick">TRSMMDot.WalkClick</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trsmmdot-walkselectoption">TRSMMDot.WalkSelectOption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#type-trsnpc">type TRSNPC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#type-trsgrounditem">type TRSGroundItem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#type-trsplayer">type TRSPlayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trsmmdot-setupuptext">TRSMMDot.SetupUpText</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#debug">Debug</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rsmonster.html">RSMonters</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="craftscreen.html">CraftScreen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="silverscreen.html">SilverScreen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fairyring.html">FairyRing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="furniturebuilder.html">FurnitureBuilder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="driftnet.html">TRSDriftNet.BankOverlayOpen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="driftnet.html#trsdriftnet-destroyoverlayopen">TRSDriftNet.DestroyOverlayOpen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="driftnet.html#trsdriftnet-hasoverlay">TRSDriftNet.HasOverlay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="driftnet.html#trsdriftnet-getslotboxes">TRSDriftNet.GetSlotBoxes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="driftnet.html#trsdriftnet-getbuttons">TRSDriftNet.GetButtons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="driftnet.html#trsdriftnet-getbutton">TRSDriftNet.GetButton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anvil%28optional_interfaces_mainscreen%29.html">Anvil</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="consumablehandler%28optional_handlers%29.html">ConsumableHandlers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="combathandler.html">CombatHandler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rsfishinghandler.html">TRSFishingHandler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pohhandler.html">POHHandler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="loothandler.html">LootHandler</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">WaspLib</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">TRSWalkerObject</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/walkerobjects.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="trswalkerobject">
+<h1>TRSWalkerObject<a class="headerlink" href="#trswalkerobject" title="Link to this heading"></a></h1>
+<p>Methods to handle TRSWalkerObjects.
+TRSWalkerObject can be anything that you want to interact with on the mainscreen.
+They are divided in 2 main categories and one of them in 3 sub-categories but the usage is only limited by your imagination:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>RSObjects (TRSWalkerObjects that don’t have a dot on the minimap)</p></li>
+<li><p>MMDots:   (TRSWalkerObjects that have a dot on the minimap)
+-RSNPCs
+-RSGroundItems
+-RSPlayers</p></li>
+</ul>
+</div></blockquote>
+<section id="how-do-they-work">
+<h2>How do they work?<a class="headerlink" href="#how-do-they-work" title="Link to this heading"></a></h2>
+<p>TRSWalkerObjects are very customizable and can be used to interact with almost everything.
+For some niche use cases it might be worth do something custom or override some methods to get the behavior you want.</p>
+<p>The default way they work is:
+- WaspLib checks if you are in the TRSWalkerObject.Coordinates range.</p>
+<blockquote>
+<div><p>If not and you used one of the <strong>Walk</strong> methods, it will walk to that location.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Being in the TRSWalkerObject location, then we check if our TRSWalkerObject is a TRSObject or a TRSMMDot.
+for a TRSObject we stick with the TRSWalkerObject.Coordinates, for TRSMMDots, the coordinates are changed to the minimap dots that within the radius specified when the TRSWalkerObject was setup.</p></li>
+<li><p>WaspLib then convert the coordinate along with the TRSWalkerObject.ShapeArray information to a TCuboidArray on the mainscreen (<a class="reference external" href="https://en.wikipedia.org/wiki/Cuboid">https://en.wikipedia.org/wiki/Cuboid</a>).</p></li>
+<li><p>This TCuboidArray is the “bounds” of our targets. Each one should accurately surround each of our possible targets.</p></li>
+<li><p>Then WaspLib runs MainScreen.FindObject() inside of each TCuboid. For more info on how this works read the TRSObjectFinder documentation (<a class="reference external" href="https://torwent.github.io/SRL-T/mainscreen.html#type-trsobjectfinder">https://torwent.github.io/SRL-T/mainscreen.html#type-trsobjectfinder</a>).</p></li>
+<li><p>An ATPA of the found colors inside each cuboid is then returned.</p></li>
+<li><p>If the method used is related to hovering or clicking, we hover the closest target and then check if TRSWalkerObject.UpText matches the uptext.</p></li>
+<li><p>If it does and we are using a clicking method, we click it.</p></li>
+<li><p>If we use a <strong>select</strong> method, if the option is not in the uptext we right click the target and select that option.</p></li>
+</ul>
+<p>This is the default behavior but TRSWalkerObjects are very customizable and functionality can be toggled on with TRSWalkerObject.Filter:
+- Filter.Walker: Disables walker for the TRSWalkerObject. Coordinates are ignored and still use the minimap dots that are visible on the</p>
+<blockquote>
+<div><p>minimap if we are talking about a TRSMMDot, otherwise only MainScreen.FindObject() is used.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Filter.MinimapDot: Disables the usage of minimap dots for TRSMMDots. TRSObjects have this off by default. Disabling this for TRSMMDots is only useful if the the Player, NPC or Item is in a fixed position.</p></li>
+<li><p>Filter.Finder: Disables color checking. The returned cuboids by Walker and MM2MS are our targets. This is useful for things that are “invisible” like agility shortcuts and/or things that have colors that are just unreliable.</p></li>
+<li><p>UpText: Ignore all uptext when hovering the targets</p></li>
+<li><p>Filter.Skip: This is an internal filter that you probably don’t want to use directaly. Decides which TRSWalkerObjects setup is skipped during wasplib’s setup process.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You cannot disable Filter.Walker, Filter.MinimapDot, Filter.Finder all at the same time. You need one of them enabled and keep in mind that TRSObjects already have Filter.MinimapDot disabled.</p>
+</div>
+</section>
+<hr class="docutils" />
+<section id="type-trswalkerobject">
+<h2>type TRSWalkerObject<a class="headerlink" href="#type-trswalkerobject" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="n">TRSWalkerObject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">record</span>
+<span class="w">  </span><span class="n">Filter</span><span class="o">:</span><span class="w"> </span><span class="k">record</span>
+<span class="w">    </span><span class="n">Walker</span><span class="o">:</span><span class="w">     </span><span class="kt">Boolean</span><span class="o">;</span>
+<span class="w">    </span><span class="n">MinimapDot</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span>
+<span class="w">    </span><span class="n">Finder</span><span class="o">:</span><span class="w">     </span><span class="kt">Boolean</span><span class="o">;</span>
+<span class="w">    </span><span class="n">UpText</span><span class="o">:</span><span class="w">     </span><span class="kt">Boolean</span><span class="o">;</span>
+<span class="w">    </span><span class="n">Skip</span><span class="o">:</span><span class="w">       </span><span class="kt">Boolean</span><span class="o">;</span>
+<span class="w">  </span><span class="k">end</span><span class="o">;</span>
+<span class="w">  </span><span class="n">ShapeArray</span><span class="o">:</span><span class="w"> </span><span class="n">TRSMainScreenShapeArray</span><span class="o">;</span>
+<span class="w">  </span><span class="n">Coordinates</span><span class="o">:</span><span class="w"> </span><span class="n">TPointArray</span><span class="o">;</span>
+<span class="w">  </span><span class="n">Finder</span><span class="o">:</span><span class="w"> </span><span class="n">TRSObjectFinder</span><span class="o">;</span>
+<span class="w">  </span><span class="n">UpText</span><span class="o">:</span><span class="w"> </span><span class="n">TStringArray</span><span class="o">;</span>
+<span class="w">  </span><span class="n">ActionUpText</span><span class="o">:</span><span class="w"> </span><span class="n">TStringArray</span><span class="o">;</span>
+<span class="k">class</span><span class="w"> </span><span class="k">var</span>
+<span class="w">  </span><span class="n">CurrentUpText</span><span class="o">:</span><span class="w"> </span><span class="n">TStringArray</span><span class="o">;</span>
+<span class="w">  </span><span class="n">RedClicked</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span>
+<span class="w">  </span><span class="n">Walker</span><span class="o">:</span><span class="w"> </span><span class="n">PRSWalker</span><span class="o">;</span>
+<span class="k">end</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Parent record of all TRSWalkerObjects.</p>
+</section>
+<hr class="docutils" />
+<section id="walker-click">
+<h2>Walker.Click<a class="headerlink" href="#walker-click" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSWalker</span><span class="o">.</span><span class="nf">Click</span><span class="p">(</span><span class="n">minimapPoint</span><span class="o">:</span><span class="w"> </span><span class="n">TPoint</span><span class="o">;</span><span class="w"> </span><span class="n">Randomness</span><span class="o">:</span><span class="w"> </span><span class="n">Int32</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span><span class="w"> </span><span class="kp">override</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>You shouldn’t modify this unless you know what you are doing, otherwise you might break TRSWalkerObjects.
+This is overriden so if we redclick our current TRSWalkerObject target while mainscreen walking we disable walker.
+When we start the walking process towards a TRSWalkerObject, TRSWalkerObject.CurrentUpText is temporarily set so we
+know what we are looking for while walking. Once we click the target TRSWalkerObject.CurrentUpText is cleared.</p>
+</section>
+<hr class="docutils" />
+<section id="trswalkerobject-setup">
+<h2>TRSWalkerObject._Setup<a class="headerlink" href="#trswalkerobject-setup" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">procedure</span><span class="w"> </span><span class="nc">TRSWalkerObject</span><span class="o">.</span><span class="nf">_Setup</span><span class="p">()</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Base internal TRSWalkerObject setup method. You probably won’t need to call this directly, it’s called by the next setup methods automatically.</p>
+</section>
+<hr class="docutils" />
+<section id="id1">
+<h2>TRSWalkerObject.Setup<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">procedure</span><span class="w"> </span><span class="nc">TRSWalkerObject</span><span class="o">.</span><span class="nf">Setup</span><span class="p">(</span><span class="n">coordinates</span><span class="o">:</span><span class="w"> </span><span class="n">TPointArray</span><span class="p">)</span><span class="o">;</span>
+<span class="k">procedure</span><span class="w"> </span><span class="nc">TRSWalkerObject</span><span class="o">.</span><span class="nf">Setup</span><span class="p">(</span><span class="n">upText</span><span class="o">:</span><span class="w"> </span><span class="n">TStringArray</span><span class="p">)</span><span class="o">;</span><span class="w"> </span><span class="n">overload</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>TRSWalkerObject setup methods. You usually need to call of this.</p>
+<p>The method that takes in coordinates should be called first.
+That is because <cite>TRSWalkerObject.Setup(coordinates: TPointArray)</cite> is where
+we decide if TRSWalkerObject.Filter.Skip is going to be true or not.</p>
+<p>Keep in mind if you don’t use a TRSWalker in your script and want to use TRSWalkerObjects, you will need to manually setup them in your script
+because they will all be skipped.
+So you need to set <cite>TRSWalkerObject.Filter.Skip := False</cite> and then call <cite>TRSWalkerObject.Setup(upText: TStringArray)</cite></p>
+<p>Normal usage in the following example.</p>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Link to this heading"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="c1">//Example with walker:</span>
+<span class="k">var</span>
+<span class="w">  </span><span class="n">rsw</span><span class="o">:</span><span class="w"> </span><span class="n">TRSWalker</span><span class="o">;</span>
+<span class="w">  </span><span class="n">obj</span><span class="o">:</span><span class="w"> </span><span class="n">TRSObject</span><span class="o">;</span><span class="w"> </span><span class="c1">//This is a type of TRSWalkerObject.</span>
+<span class="k">begin</span>
+<span class="w">  </span><span class="n">rsw</span><span class="o">.</span><span class="n">Setup</span><span class="p">()</span><span class="o">;</span>
+<span class="w">  </span><span class="n">obj</span><span class="o">.</span><span class="n">Setup</span><span class="p">([[</span><span class="mi">200</span><span class="o">,</span><span class="w"> </span><span class="mi">200</span><span class="p">]])</span><span class="o">;</span>
+<span class="w">  </span><span class="n">obj</span><span class="o">.</span><span class="n">Setup</span><span class="p">([</span><span class="s">&#39;My&#39;</span><span class="o">,</span><span class="w"> </span><span class="s">&#39;uptext&#39;</span><span class="p">])</span><span class="o">;</span>
+<span class="k">end</span><span class="o">;</span>
+
+
+<span class="c1">//Example without walker:</span>
+<span class="k">var</span>
+<span class="w">  </span><span class="n">obj</span><span class="o">:</span><span class="w"> </span><span class="n">TRSObject</span><span class="o">;</span><span class="w"> </span><span class="c1">//This is a type of TRSWalkerObject.</span>
+<span class="k">begin</span>
+<span class="w">  </span><span class="n">obj</span><span class="o">.</span><span class="n">Setup</span><span class="p">([</span><span class="s">&#39;My&#39;</span><span class="o">,</span><span class="w"> </span><span class="s">&#39;uptext&#39;</span><span class="p">])</span><span class="o">;</span>
+<span class="k">end</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="trswalkerobject-getcuboidarray">
+<h2>TRSWalkerObject.GetCuboidArray<a class="headerlink" href="#trswalkerobject-getcuboidarray" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSWalkerObject</span><span class="o">.</span><span class="nf">GetCuboidArrayEx</span><span class="p">(</span><span class="n">out</span><span class="w"> </span><span class="n">floorTiles</span><span class="o">,</span><span class="w"> </span><span class="n">roofTiles</span><span class="o">:</span><span class="w"> </span><span class="n">TRectArray</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="n">TCuboidArray</span><span class="o">;</span>
+<span class="k">function</span><span class="w"> </span><span class="nc">TRSWalkerObject</span><span class="o">.</span><span class="nf">GetCuboidArray</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="n">TCuboidArray</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Internal TRSWalkerObject method responsible for returning a TCuboidArray of our target on the 3D world (on mainscreen and outside of it).
+You will probably never need to use this directly.
+You can visually see this in action by using the <cite>Debug()</cite> methods, this is responsible for the white lines surounding the targets.</p>
+</section>
+<hr class="docutils" />
+<section id="trswalkerobject-findonmainscreen">
+<h2>TRSWalkerObject.FindOnMainScreen<a class="headerlink" href="#trswalkerobject-findonmainscreen" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSWalkerObject</span><span class="o">.</span><span class="nf">FindOnMainScreen</span><span class="p">(</span><span class="n">cuboidArray</span><span class="o">:</span><span class="w"> </span><span class="n">TCuboidArray</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="n">T2DPointArray</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Internal TRSWalkerObject method responsible for filtering a TCuboidArray by what’s visible in the mainscren.
+This is meant to filter TRSWalkerObject.GetCuboidArray() so targets that are outside of the mainscreen are filtered out.
+You will probably never need to use this directly.</p>
+</section>
+<hr class="docutils" />
+<section id="trswalkerobject-onmainscreen">
+<h2>TRSWalkerObject.OnMainScreen<a class="headerlink" href="#trswalkerobject-onmainscreen" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSWalkerObject</span><span class="o">.</span><span class="nf">OnMainScreen</span><span class="p">(</span><span class="n">cuboidArray</span><span class="o">:</span><span class="w"> </span><span class="n">TCuboidArray</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Internal TRSWalkerObject method that returns true or false if we have TCuboids visible on the mainscreen.
+You probably don’t need to use this directly.</p>
+</section>
+<hr class="docutils" />
+<section id="trswalkerobject-uptextcheck">
+<h2>TRSWalkerObject._UpTextCheck<a class="headerlink" href="#trswalkerobject-uptextcheck" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSWalkerObject</span><span class="o">.</span><span class="nf">_UpTextCheck</span><span class="p">(</span><span class="n">out</span><span class="w"> </span><span class="n">shouldExit</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Internal TRSWalkerObject helper method that is used by all hovering methods.
+You probably don’t need to use this directly.</p>
+</section>
+<hr class="docutils" />
+<section id="trswalkerobject-walkuptextcheck">
+<h2>TRSWalkerObject._WalkUpTextCheck<a class="headerlink" href="#trswalkerobject-walkuptextcheck" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSWalkerObject</span><span class="o">.</span><span class="nf">_WalkUpTextCheck</span><span class="p">(</span><span class="n">out</span><span class="w"> </span><span class="n">shouldExit</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Internal TRSWalkerObject helper method that is used by all walking hover methods.
+You probably don’t need to use this directly.</p>
+</section>
+<hr class="docutils" />
+<section id="trswalkerobject-clickhelper">
+<h2>TRSWalkerObject._ClickHelper<a class="headerlink" href="#trswalkerobject-clickhelper" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSWalkerObject</span><span class="o">.</span><span class="nf">_ClickHelper</span><span class="p">(</span><span class="n">leftClick</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Internal TRSWalkerObject helper method that is used by other clicking methods.
+You probably don’t need to use this directly.</p>
+<p>This is what’s responsible for deciding if we click a target we are hovering or not.</p>
+</section>
+<hr class="docutils" />
+<section id="trswalkerobject-selecthelper">
+<h2>TRSWalkerObject._SelectHelper<a class="headerlink" href="#trswalkerobject-selecthelper" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSWalkerObject</span><span class="o">.</span><span class="nf">_SelectHelper</span><span class="p">(</span><span class="n">action</span><span class="o">:</span><span class="w"> </span><span class="n">TStringArray</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Internal TRSWalkerObject helper method that is used by other select methods.
+You probably don’t need to use this directly.</p>
+<p>This is what is responsible for deciding if we just left click a target we are hovering or right click it and choose an option.</p>
+</section>
+<hr class="docutils" />
+<section id="type-trsobject">
+<h2>type TRSObject<a class="headerlink" href="#type-trsobject" title="Link to this heading"></a></h2>
+<p>TRSObjects are a type of TRSWalkerObject.
+This are meant to be TRSWalkerObjects that do not have a minimap dot so TRSObject.Filter.MinimapDot is False by default and shouldn’t be changed.</p>
+</section>
+<hr class="docutils" />
+<section id="trsobject-setup">
+<h2>TRSObject.Setup<a class="headerlink" href="#trsobject-setup" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">procedure</span><span class="w"> </span><span class="nc">TRSObject</span><span class="o">.</span><span class="nf">SetupEx</span><span class="p">(</span><span class="n">shape</span><span class="o">:</span><span class="w"> </span><span class="n">Vector3</span><span class="o">;</span><span class="w"> </span><span class="n">coordinates</span><span class="o">:</span><span class="w"> </span><span class="n">TPointArray</span><span class="p">)</span><span class="o">;</span><span class="w"> </span><span class="n">overload</span><span class="o">;</span>
+<span class="k">procedure</span><span class="w"> </span><span class="nc">TRSObject</span><span class="o">.</span><span class="nf">Setup</span><span class="p">(</span><span class="n">size</span><span class="o">,</span><span class="w"> </span><span class="n">height</span><span class="o">:</span><span class="w"> </span><span class="kt">Double</span><span class="o">;</span><span class="w"> </span><span class="n">coordinates</span><span class="o">:</span><span class="w"> </span><span class="n">TPointArray</span><span class="p">)</span><span class="o">;</span><span class="w"> </span><span class="n">overload</span><span class="o">;</span>
+<span class="k">procedure</span><span class="w"> </span><span class="nc">TRSObject</span><span class="o">.</span><span class="nf">Setup</span><span class="p">(</span><span class="n">height</span><span class="o">:</span><span class="w"> </span><span class="kt">Double</span><span class="o">;</span><span class="w"> </span><span class="n">coordinates</span><span class="o">:</span><span class="w"> </span><span class="n">TPointArray</span><span class="p">)</span><span class="o">;</span><span class="w"> </span><span class="n">overload</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>All this extend the basic <cite>TRSWalkerObject.Setup(coordinates: TPointArray)</cite>.
+For TRSObjects this are the methods that should be used for setting them up initially.</p>
+<p>In TRSObject.Setup(shape: Vector3; coordinates: TPointArray), <strong>shape</strong> should be a vector3 of the object shape in number of tiles:
+- shape.X: number of tiles of the object from west to east.
+- shape.Y: number of tiles of the object from north to south.
+- shape.Z: object height, this value has to be guessed, I recommend you try several values and debug it until it looks good to you.</p>
+<blockquote>
+<div><p>As some examples, player and npcs height is around 7, bank chests 4, yew/magic trees 14/16.</p>
+</div></blockquote>
+<p>In TRSObject.Setup(size, height: Double; coordinates: TPointArray), <strong>size</strong> and <strong>height</strong> are used
+to create a Vector3 “shape” and call TRSObject.Setup(shape: Vector3; coordinates: TPointArray).
+In this case, <strong>shape.X</strong> and <strong>shape.Y</strong> would be both equal to <strong>size</strong>.</p>
+<p>Lastly, TRSObject.Setup(height: Double; coordinates: TPointArray) also calls TRSObject.Setup(shape: Vector3; coordinates: TPointArray)
+and sets the <strong>shape.X</strong> and <strong>shape.Y</strong> to 1.</p>
+</section>
+<hr class="docutils" />
+<section id="trsobject-findex">
+<h2>TRSObject.FindEx<a class="headerlink" href="#trsobject-findex" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSObject</span><span class="o">.</span><span class="nf">FindEx</span><span class="p">(</span><span class="n">out</span><span class="w"> </span><span class="n">floorTiles</span><span class="o">,</span><span class="w"> </span><span class="n">roofTiles</span><span class="o">:</span><span class="w"> </span><span class="n">TRectArray</span><span class="o">;</span><span class="w"> </span><span class="n">out</span><span class="w"> </span><span class="n">cuboidArray</span><span class="o">:</span><span class="w"> </span><span class="n">TCuboidArray</span><span class="o">;</span><span class="w"> </span><span class="n">out</span><span class="w"> </span><span class="n">atpa</span><span class="o">:</span><span class="w"> </span><span class="n">T2DPointArray</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>TRSObject method used to find a TRSObject. If found returns true, if not returns false.
+This “extended” method in particular is only meant for debugging and should be avoided outside of development/debugging.
+This is what is used when you call <cite>Debug(TRSObject)</cite>.</p>
+</section>
+<hr class="docutils" />
+<section id="trsobject-find">
+<h2>TRSObject.Find<a class="headerlink" href="#trsobject-find" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSObject</span><span class="o">.</span><span class="nf">Find</span><span class="p">(</span><span class="n">out</span><span class="w"> </span><span class="n">atpa</span><span class="o">:</span><span class="w"> </span><span class="n">T2DPointArray</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span><span class="w"> </span><span class="n">overload</span><span class="o">;</span>
+<span class="k">function</span><span class="w"> </span><span class="nc">TRSObject</span><span class="o">.</span><span class="nf">Find</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span><span class="w"> </span><span class="n">overload</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>TRSObject methods used to find a TRSObject. If found returns true, if not returns false.</p>
+<section id="id2">
+<h3>Example<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="nb">WriteLn</span><span class="w"> </span><span class="n">RSObjects</span><span class="o">.</span><span class="n">GEBank</span><span class="o">.</span><span class="n">Find</span><span class="p">(</span><span class="n">atpa</span><span class="p">)</span><span class="o">;</span><span class="w"> </span><span class="c1">//Be in ge and with a walker setup there.</span>
+<span class="n">Debug</span><span class="p">(</span><span class="n">atpa</span><span class="p">)</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id3">
+<h2>TRSObject.Find<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSObject</span><span class="o">.</span><span class="nf">Find</span><span class="p">(</span><span class="n">out</span><span class="w"> </span><span class="n">atpa</span><span class="o">:</span><span class="w"> </span><span class="n">T2DPointArray</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span><span class="w"> </span><span class="n">overload</span><span class="o">;</span>
+<span class="k">function</span><span class="w"> </span><span class="nc">TRSObject</span><span class="o">.</span><span class="nf">Find</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span><span class="w"> </span><span class="n">overload</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>TRSObject methods used to find a TRSObject. If found returns true, if not returns false.</p>
+<section id="id4">
+<h3>Example<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="nb">WriteLn</span><span class="w"> </span><span class="n">RSObjects</span><span class="o">.</span><span class="n">GEBank</span><span class="o">.</span><span class="n">Find</span><span class="p">(</span><span class="n">atpa</span><span class="p">)</span><span class="o">;</span><span class="w"> </span><span class="c1">//Be in ge and with a walker setup there.</span>
+<span class="n">Debug</span><span class="p">(</span><span class="n">atpa</span><span class="p">)</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="trsobject-draw">
+<h2>TRSObject.Draw<a class="headerlink" href="#trsobject-draw" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">procedure</span><span class="w"> </span><span class="nc">TRSObject</span><span class="o">.</span><span class="nf">Draw</span><span class="p">(</span><span class="n">out</span><span class="w"> </span><span class="n">bitmap</span><span class="o">:</span><span class="w"> </span><span class="n">TMufasaBitmap</span><span class="p">)</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Internal method used to draw found TRSObjects in a TMufasaBitmap.</p>
+<section id="id5">
+<h3>Example<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="n">Bitmap</span><span class="o">.</span><span class="n">FromClient</span><span class="p">()</span>
+<span class="n">RSObjects</span><span class="o">.</span><span class="n">GEBank</span><span class="o">.</span><span class="n">Draw</span><span class="p">(</span><span class="n">Bitmap</span><span class="p">)</span><span class="o">;</span><span class="w"> </span><span class="c1">//Be in ge and with a walker setup there.</span>
+<span class="n">Bitmap</span><span class="o">.</span><span class="n">Debug</span><span class="p">()</span><span class="o">;</span>
+<span class="n">Bitmap</span><span class="o">.</span><span class="n">Free</span><span class="p">()</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="trsobject-savedebug">
+<h2>TRSObject.SaveDebug<a class="headerlink" href="#trsobject-savedebug" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">procedure</span><span class="w"> </span><span class="nc">TRSObject</span><span class="o">.</span><span class="nf">SaveDebug</span><span class="p">()</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Saves a debug image of the TRSObject to SimbaScreenshotsRSObjects</p>
+<section id="id6">
+<h3>Example<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="n">RSObjects</span><span class="o">.</span><span class="n">GEBank</span><span class="o">.</span><span class="n">SaveDebug</span><span class="p">()</span><span class="o">;</span><span class="w"> </span><span class="c1">//Be in ge and with a walker setup there.</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="trsobject-updatetarget">
+<h2>TRSObject._UpdateTarget<a class="headerlink" href="#trsobject-updatetarget" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">procedure</span><span class="w"> </span><span class="nc">TRSObject</span><span class="o">.</span><span class="nf">_UpdateTarget</span><span class="p">(</span><span class="n">sender</span><span class="o">:</span><span class="w"> </span><span class="n">PMouse</span><span class="o">;</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">x</span><span class="o">,</span><span class="w"> </span><span class="n">y</span><span class="o">:</span><span class="w"> </span><span class="kt">Double</span><span class="o">;</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">done</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="p">)</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Internal helper method of TMouseMovingEventEx type used to update the target position while the mouse is moving.
+You should probably not touch this if you don’t understand it.</p>
+</section>
+<hr class="docutils" />
+<section id="trsobject-hoverhelper">
+<h2>TRSObject._HoverHelper<a class="headerlink" href="#trsobject-hoverhelper" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSObject</span><span class="o">.</span><span class="nf">_HoverHelper</span><span class="p">(</span><span class="n">attempts</span><span class="o">:</span><span class="w"> </span><span class="n">Int32</span><span class="o">;</span><span class="w"> </span><span class="n">trackTarget</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Internal helper method used to hover a TRSObject target.
+You should not use this directly.</p>
+</section>
+<hr class="docutils" />
+<section id="trsobject-walkhoverhelper">
+<h2>TRSObject._WalkHoverHelper<a class="headerlink" href="#trsobject-walkhoverhelper" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSObject</span><span class="o">.</span><span class="nf">_WalkHoverHelper</span><span class="p">(</span><span class="n">attempts</span><span class="o">:</span><span class="w"> </span><span class="n">Int32</span><span class="o">;</span><span class="w"> </span><span class="n">trackTarget</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Internal helper method used to walk and hover a TRSObject target.
+You should not use this directly.</p>
+<p>This is responsible for deciding wether we should walk to a TRSObject target or not before attempting to hover it.</p>
+</section>
+<hr class="docutils" />
+<section id="trsobject-prehoverhelper">
+<h2>TRSObject.PreHoverHelper<a class="headerlink" href="#trsobject-prehoverhelper" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSObject</span><span class="o">.</span><span class="nf">PreHoverHelper</span><span class="p">(</span><span class="n">attempts</span><span class="o">:</span><span class="w"> </span><span class="n">Int32</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Internal helper method used to pre-hover a TRSObject target.
+You should not use this directly.</p>
+</section>
+<hr class="docutils" />
+<section id="trsobject-hover">
+<h2>TRSObject.Hover<a class="headerlink" href="#trsobject-hover" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSObject</span><span class="o">.</span><span class="nf">Hover</span><span class="p">(</span><span class="n">attempts</span><span class="o">:</span><span class="w"> </span><span class="n">Int32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="o">;</span><span class="w"> </span><span class="n">trackTarget</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TRACK_TARGET</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Method used to hover a TRSObject target if it’s found on the mainscreen.
+It can update the target position while the mouse moves with <strong>trackTarget</strong>.</p>
+<section id="id7">
+<h3>Example<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="n">RSW</span><span class="o">.</span><span class="n">WebWalk</span><span class="p">(</span><span class="n">WaspWeb</span><span class="o">.</span><span class="n">LOCATION_VARROCK</span><span class="p">)</span><span class="o">;</span>
+<span class="n">RSObjects</span><span class="o">.</span><span class="n">GEBank</span><span class="o">.</span><span class="n">Hover</span><span class="p">()</span><span class="o">;</span><span class="w"> </span><span class="c1">//Be in GE with a walker setup there.</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="trsobject-walkhover">
+<h2>TRSObject.WalkHover<a class="headerlink" href="#trsobject-walkhover" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSObject</span><span class="o">.</span><span class="nf">WalkHover</span><span class="p">(</span><span class="n">attempts</span><span class="o">:</span><span class="w"> </span><span class="n">Int32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="o">;</span><span class="w"> </span><span class="n">trackTarget</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TRACK_TARGET</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Method used to walk and hover a TRSObject target if it’s found on the mainscreen after walking.
+It can update the target position while the mouse moves with <strong>trackTarget</strong>.</p>
+<section id="id8">
+<h3>Example<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="c1">//Be in varrock with a varrock map loaded.</span>
+<span class="n">RSW</span><span class="o">.</span><span class="n">WebWalk</span><span class="p">(</span><span class="n">WaspWeb</span><span class="o">.</span><span class="n">LOCATION_VARROCK</span><span class="p">)</span><span class="o">;</span>
+<span class="n">RSObjects</span><span class="o">.</span><span class="n">GEBank</span><span class="o">.</span><span class="n">WalkHover</span><span class="p">()</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="trsobject-click">
+<h2>TRSObject.Click<a class="headerlink" href="#trsobject-click" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSObject</span><span class="o">.</span><span class="nf">Click</span><span class="p">(</span><span class="n">leftClick</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">True</span><span class="o">;</span><span class="w"> </span><span class="n">attempts</span><span class="o">:</span><span class="w"> </span><span class="n">Int32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Method used to click a TRSObject target if it’s found on the mainscreen.</p>
+<section id="id9">
+<h3>Example<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="c1">//Be in ge with a ge map loaded.</span>
+<span class="nb">WriteLn</span><span class="w"> </span><span class="n">RSObjects</span><span class="o">.</span><span class="n">GEBank</span><span class="o">.</span><span class="n">Click</span><span class="p">()</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="trsobject-selectoption">
+<h2>TRSObject.SelectOption<a class="headerlink" href="#trsobject-selectoption" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSObject</span><span class="o">.</span><span class="nf">SelectOption</span><span class="p">(</span><span class="n">action</span><span class="o">:</span><span class="w"> </span><span class="n">TStringArray</span><span class="o">;</span><span class="w"> </span><span class="n">attempts</span><span class="o">:</span><span class="w"> </span><span class="n">Int32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Method used to select an option on a TRSObject target if it’s found on the mainscreen.</p>
+<section id="id10">
+<h3>Example<a class="headerlink" href="#id10" title="Link to this heading"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="c1">//Be in ge with a ge map loaded.</span>
+<span class="nb">WriteLn</span><span class="w"> </span><span class="n">RSObjects</span><span class="o">.</span><span class="n">GEBank</span><span class="o">.</span><span class="n">SelectOption</span><span class="p">([</span><span class="s">&#39;Collect&#39;</span><span class="p">])</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="trsobject-walkclick">
+<h2>TRSObject.WalkClick<a class="headerlink" href="#trsobject-walkclick" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSObject</span><span class="o">.</span><span class="nf">WalkClick</span><span class="p">(</span><span class="n">leftClick</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">True</span><span class="o">;</span><span class="w"> </span><span class="n">attempts</span><span class="o">:</span><span class="w"> </span><span class="n">Int32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Method used to walk and click a TRSObject target if it’s found on the mainscreen.</p>
+<section id="id11">
+<h3>Example<a class="headerlink" href="#id11" title="Link to this heading"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="c1">//Be in ge with a ge map loaded, preferably far away so it has to walk.</span>
+<span class="nb">WriteLn</span><span class="w"> </span><span class="n">RSObjects</span><span class="o">.</span><span class="n">GEBank</span><span class="o">.</span><span class="n">WalkClick</span><span class="p">()</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="trsobject-walkselectoption">
+<h2>TRSObject.WalkSelectOption<a class="headerlink" href="#trsobject-walkselectoption" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSObject</span><span class="o">.</span><span class="nf">WalkSelectOption</span><span class="p">(</span><span class="n">action</span><span class="o">:</span><span class="w"> </span><span class="n">TStringArray</span><span class="o">;</span><span class="w"> </span><span class="n">attempts</span><span class="o">:</span><span class="w"> </span><span class="n">Int32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Method used to walk and select an option on a TRSObject target if it’s found on the mainscreen.</p>
+<section id="id12">
+<h3>Example<a class="headerlink" href="#id12" title="Link to this heading"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="c1">//Be in ge with a ge map loaded, preferably far away so it has to walk.</span>
+<span class="nb">WriteLn</span><span class="w"> </span><span class="n">RSObjects</span><span class="o">.</span><span class="n">GEBank</span><span class="o">.</span><span class="n">WalkSelectOption</span><span class="p">([</span><span class="s">&#39;Collect&#39;</span><span class="p">])</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="type-trsmmdot">
+<h2>type TRSMMDot<a class="headerlink" href="#type-trsmmdot" title="Link to this heading"></a></h2>
+<p>TRSMMDot are a type of TRSWalkerObject.
+This are meant to be TRSWalkerObjects that have a minimap dot so TRSMMDot.Filter.MinimapDot is True by default and shouldn’t be changed.
+This also have a <strong>DotType</strong> variable for the type of ERSMinimapDot they have (PLAYER, NPC, ITEM) and a <strong>DotFilter</strong> which is used to
+filter mmdots in/out of circles and/or polygons so we only focus on the TRSMMDots we want.</p>
+</section>
+<hr class="docutils" />
+<section id="trsmmdot-setup">
+<h2>TRSMMDot.Setup<a class="headerlink" href="#trsmmdot-setup" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">procedure</span><span class="w"> </span><span class="nc">TRSMMDot</span><span class="o">.</span><span class="nf">SetupEx</span><span class="p">(</span><span class="n">radius</span><span class="o">:</span><span class="w"> </span><span class="n">Int32</span><span class="o">;</span><span class="w"> </span><span class="n">shape</span><span class="o">:</span><span class="w"> </span><span class="n">Vector3</span><span class="o">;</span><span class="w"> </span><span class="n">coordinates</span><span class="o">:</span><span class="w"> </span><span class="n">TPointArray</span><span class="p">)</span><span class="o">;</span><span class="w"> </span><span class="n">overload</span><span class="o">;</span>
+<span class="k">procedure</span><span class="w"> </span><span class="nc">TRSMMDot</span><span class="o">.</span><span class="nf">Setup</span><span class="p">(</span><span class="n">radius</span><span class="o">:</span><span class="w"> </span><span class="n">Int32</span><span class="o">;</span><span class="w"> </span><span class="n">size</span><span class="o">,</span><span class="w"> </span><span class="n">height</span><span class="o">:</span><span class="w"> </span><span class="kt">Double</span><span class="o">;</span><span class="w"> </span><span class="n">coordinates</span><span class="o">:</span><span class="w"> </span><span class="n">TPointArray</span><span class="p">)</span><span class="o">;</span><span class="w"> </span><span class="n">overload</span><span class="o">;</span>
+<span class="k">procedure</span><span class="w"> </span><span class="nc">TRSMMDot</span><span class="o">.</span><span class="nf">Setup</span><span class="p">(</span><span class="n">radius</span><span class="o">:</span><span class="w"> </span><span class="n">Int32</span><span class="o">;</span><span class="w"> </span><span class="n">height</span><span class="o">:</span><span class="w"> </span><span class="kt">Double</span><span class="o">;</span><span class="w"> </span><span class="n">coordinates</span><span class="o">:</span><span class="w"> </span><span class="n">TPointArray</span><span class="p">)</span><span class="o">;</span><span class="w"> </span><span class="n">overload</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>All this extend the basic <cite>TRSWalkerObject.Setup(coordinates: TPointArray)</cite> specifically for TRSMMDots.
+For TRSMMDots this are the methods that should be used for setting them up initially.</p>
+<p>In TRSMMDot.Setup(radius: Int32; shape: Vector3; coordinates: TPointArray),
+<strong>radius</strong> is used to create a simple TRSDotFilterArray of that radius with <strong>cordinates</strong> and their center point.
+<strong>shape</strong> should be a vector3 of the target shape in number of tiles:</p>
+<ul class="simple">
+<li><p>shape.X: Number of tiles of the target from west to east.</p></li>
+<li><p>shape.Y: Number of tiles of the target from north to south.</p></li>
+<li><p>shape.Z: Target height, this value has to be guessed, I recommend you try several values and debug it until it looks good to you. As some examples, player and npcs height is around 7, bank chests 4, yew/magic trees 14/16.</p></li>
+</ul>
+<p>For NPCs that can move and are 1x2 tiles or any uneven number of tiles,
+I recommend you just set <strong>shape.X</strong> and <strong>shape.Y</strong> to the largest one. So a cow I would recommend making the shape 2x2.</p>
+<p>The other methods all call this first one with certain default values:</p>
+<ul class="simple">
+<li><p>Size makes shape.X and shape.Y equal to size.</p></li>
+<li><p>If size is omited, shape.X and shape.Y are set to 1.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="trsmmdot-getwmmpolys">
+<h2>TRSMMDot._GetWMMPolys<a class="headerlink" href="#trsmmdot-getwmmpolys" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSMMDot</span><span class="o">.</span><span class="nf">_GetWMMPolys</span><span class="p">(</span><span class="n">out</span><span class="w"> </span><span class="n">mmTPA</span><span class="o">,</span><span class="w"> </span><span class="n">dots</span><span class="o">:</span><span class="w"> </span><span class="n">TPointArray</span><span class="o">;</span><span class="w"> </span><span class="n">out</span><span class="w"> </span><span class="n">dotFilters</span><span class="o">:</span><span class="w"> </span><span class="n">TRSDotFilterArray</span><span class="o">;</span><span class="w"> </span><span class="n">out</span><span class="w"> </span><span class="n">floorTiles</span><span class="o">,</span><span class="w"> </span><span class="n">roofTiles</span><span class="o">:</span><span class="w"> </span><span class="n">TRectArray</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="n">TCuboidArray</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Internal helper TRSMMDot method used for debugging.
+You probably dont need to use this directly. You can see what this does in action by calling <cite>Debug(TRSMMDot)</cite>.</p>
+</section>
+<hr class="docutils" />
+<section id="trsmmdot-getmmpolys">
+<h2>TRSMMDot._GetMMPolys<a class="headerlink" href="#trsmmdot-getmmpolys" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSMMDot</span><span class="o">.</span><span class="nf">_GetMMPolys</span><span class="p">(</span><span class="n">out</span><span class="w"> </span><span class="n">dots</span><span class="o">:</span><span class="w"> </span><span class="n">TPointArray</span><span class="o">;</span><span class="w"> </span><span class="n">out</span><span class="w"> </span><span class="n">floorTiles</span><span class="o">,</span><span class="w"> </span><span class="n">roofTiles</span><span class="o">:</span><span class="w"> </span><span class="n">TRectArray</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="n">TCuboidArray</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Internal helper TRSMMDot method used for debugging.
+You probably dont need to use this directly. You can see what this does in action by calling <cite>Debug(TRSMMDot)</cite>.
+This is used instead of TRSMMDot._GetWMMPolys() when TRSMMDot.Filter.Walker is disabled.</p>
+</section>
+<hr class="docutils" />
+<section id="trsmmdot-getcuboidarray">
+<h2>TRSMMDot.GetCuboidArray<a class="headerlink" href="#trsmmdot-getcuboidarray" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSMMDot</span><span class="o">.</span><span class="nf">GetCuboidArrayEx</span><span class="p">(</span><span class="n">out</span><span class="w"> </span><span class="n">mmTPA</span><span class="o">,</span><span class="w"> </span><span class="n">dots</span><span class="o">:</span><span class="w"> </span><span class="n">TPointArray</span><span class="o">;</span><span class="w"> </span><span class="n">out</span><span class="w"> </span><span class="n">dotFilters</span><span class="o">:</span><span class="w"> </span><span class="n">TRSDotFilterArray</span><span class="o">;</span><span class="w"> </span><span class="n">out</span><span class="w"> </span><span class="n">floorTiles</span><span class="o">:</span><span class="w"> </span><span class="n">TRectArray</span><span class="o">;</span><span class="w"> </span><span class="n">out</span><span class="w"> </span><span class="n">roofTiles</span><span class="o">:</span><span class="w"> </span><span class="n">TRectArray</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="n">TCuboidArray</span><span class="o">;</span><span class="w"> </span><span class="n">overload</span><span class="o">;</span>
+<span class="k">function</span><span class="w"> </span><span class="nc">TRSMMDot</span><span class="o">.</span><span class="nf">GetCuboidArray</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="n">TCuboidArray</span><span class="o">;</span><span class="w"> </span><span class="kp">override</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Internal TRSMMDot method responsible for returning a TCuboidArray of our target on the 3D world (on mainscreen and outside of it).
+This uses the previous 2 helper methods to do this.
+You will probably never need to use this directly.
+You can visually see this in action by using the <cite>Debug()</cite> methods, this is responsible for the white lines surounding the targets.</p>
+</section>
+<hr class="docutils" />
+<section id="trsmmdot-findex">
+<h2>TRSMMDot.FindEx<a class="headerlink" href="#trsmmdot-findex" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSMMDot</span><span class="o">.</span><span class="nf">FindEx</span><span class="p">(</span><span class="n">out</span><span class="w"> </span><span class="n">mmPoints</span><span class="o">,</span><span class="w"> </span><span class="n">dots</span><span class="o">:</span><span class="w"> </span><span class="n">TPointArray</span><span class="o">;</span><span class="w"> </span><span class="n">out</span><span class="w"> </span><span class="n">DotFilters</span><span class="o">:</span><span class="w"> </span><span class="n">TRSDotFilterArray</span><span class="o">;</span><span class="w"> </span><span class="n">out</span><span class="w"> </span><span class="n">floorTiles</span><span class="o">:</span><span class="w"> </span><span class="n">TRectArray</span><span class="o">;</span><span class="w"> </span><span class="n">out</span><span class="w"> </span><span class="n">roofTiles</span><span class="o">:</span><span class="w"> </span><span class="n">TRectArray</span><span class="o">;</span><span class="w"> </span><span class="n">out</span><span class="w"> </span><span class="n">cuboidArray</span><span class="o">:</span><span class="w"> </span><span class="n">TCuboidArray</span><span class="o">;</span><span class="w"> </span><span class="n">out</span><span class="w"> </span><span class="n">atpa</span><span class="o">:</span><span class="w"> </span><span class="n">T2DPointArray</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>TRSMMDot methods used to find a TRSMMDot. If found returns true, if not returns false.
+This “extended” method in particular is only meant for debugging and should be avoided outside of development/debugging.
+This is what is used when you call <cite>Debug(TRSMMDot)</cite>.</p>
+</section>
+<hr class="docutils" />
+<section id="trsmmdot-find">
+<h2>TRSMMDot.Find<a class="headerlink" href="#trsmmdot-find" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSMMDot</span><span class="o">.</span><span class="nf">Find</span><span class="p">(</span><span class="n">out</span><span class="w"> </span><span class="n">atpa</span><span class="o">:</span><span class="w"> </span><span class="n">T2DPointArray</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span><span class="w"> </span><span class="n">overload</span><span class="o">;</span>
+<span class="k">function</span><span class="w"> </span><span class="nc">TRSMMDot</span><span class="o">.</span><span class="nf">Find</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span><span class="w"> </span><span class="n">overload</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>TRSMMDot methods used to find a TRSMMDot. If found returns true, if not returns false.</p>
+<section id="id13">
+<h3>Example<a class="headerlink" href="#id13" title="Link to this heading"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="nb">WriteLn</span><span class="w"> </span><span class="n">RSNPCs</span><span class="o">.</span><span class="n">LumbridgeCook</span><span class="o">.</span><span class="n">Find</span><span class="p">(</span><span class="n">atpa</span><span class="p">)</span><span class="o">;</span><span class="w"> </span><span class="c1">//Be in lumbridge castle and with a walker setup there.</span>
+<span class="n">Debug</span><span class="p">(</span><span class="n">atpa</span><span class="p">)</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="trsmmdot-getbaserecord">
+<h2>TRSMMDot._GetBaseRecord<a class="headerlink" href="#trsmmdot-getbaserecord" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSMMDot</span><span class="o">.</span><span class="nf">_GetBaseRecord</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="n">TRSMMDot</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Internal method used for casting custom TRSMMDots back to the base record.</p>
+</section>
+<hr class="docutils" />
+<section id="trsmmdot-draw">
+<h2>TRSMMDot.Draw<a class="headerlink" href="#trsmmdot-draw" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">procedure</span><span class="w"> </span><span class="nc">TRSMMDot</span><span class="o">.</span><span class="nf">Draw</span><span class="p">(</span><span class="n">out</span><span class="w"> </span><span class="n">bitmap</span><span class="o">:</span><span class="w"> </span><span class="n">TMufasaBitmap</span><span class="p">)</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Internal method used to draw found TRSMMDot in a TMufasaBitmap.</p>
+<section id="id14">
+<h3>Example<a class="headerlink" href="#id14" title="Link to this heading"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="n">Bitmap</span><span class="o">.</span><span class="n">FromClient</span><span class="p">()</span>
+<span class="n">RSNPCs</span><span class="o">.</span><span class="n">LumbridgeCook</span><span class="o">.</span><span class="n">Draw</span><span class="p">(</span><span class="n">Bitmap</span><span class="p">)</span><span class="o">;</span><span class="w"> </span><span class="c1">//Be in Lumbridge castle and with a walker setup there.</span>
+<span class="n">Bitmap</span><span class="o">.</span><span class="n">Debug</span><span class="p">()</span><span class="o">;</span>
+<span class="n">Bitmap</span><span class="o">.</span><span class="n">Free</span><span class="p">()</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="trsmmdot-savedebug">
+<h2>TRSMMDot.SaveDebug<a class="headerlink" href="#trsmmdot-savedebug" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">procedure</span><span class="w"> </span><span class="nc">TRSMMDot</span><span class="o">.</span><span class="nf">SaveDebug</span><span class="p">()</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Saves a debug image of the TRSMMDot to SimbaScreenshotsRSMMDots</p>
+<section id="id15">
+<h3>Example<a class="headerlink" href="#id15" title="Link to this heading"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="n">RSNPCs</span><span class="o">.</span><span class="n">LumbridgeCook</span><span class="o">.</span><span class="n">SaveDebug</span><span class="p">()</span><span class="o">;</span><span class="w"> </span><span class="c1">//Be in Lumbridge castle and with a walker setup there.</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="trsmmdot-updatetarget">
+<h2>TRSMMDot._UpdateTarget<a class="headerlink" href="#trsmmdot-updatetarget" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">procedure</span><span class="w"> </span><span class="nc">TRSMMDot</span><span class="o">.</span><span class="nf">_UpdateTarget</span><span class="p">(</span><span class="n">sender</span><span class="o">:</span><span class="w"> </span><span class="n">PMouse</span><span class="o">;</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">x</span><span class="o">,</span><span class="w"> </span><span class="n">y</span><span class="o">:</span><span class="w"> </span><span class="kt">Double</span><span class="o">;</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">done</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="p">)</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Internal helper method of TMouseMovingEventEx type used to update the target position while the mouse is moving.
+You should probably not touch this if you don’t understand it.</p>
+</section>
+<hr class="docutils" />
+<section id="trsmmdot-hoverhelper">
+<h2>TRSMMDot._HoverHelper<a class="headerlink" href="#trsmmdot-hoverhelper" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSMMDot</span><span class="o">.</span><span class="nf">_HoverHelper</span><span class="p">(</span><span class="n">attempts</span><span class="o">:</span><span class="w"> </span><span class="n">Int32</span><span class="o">;</span><span class="w"> </span><span class="n">trackTarget</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Internal helper method used to hover a TRSMMDot target.
+You should not use this directly.</p>
+</section>
+<hr class="docutils" />
+<section id="trsmmdot-walkhoverhelper">
+<h2>TRSMMDot._WalkHoverHelper<a class="headerlink" href="#trsmmdot-walkhoverhelper" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSMMDot</span><span class="o">.</span><span class="nf">_WalkHoverHelper</span><span class="p">(</span><span class="n">attempts</span><span class="o">:</span><span class="w"> </span><span class="n">Int32</span><span class="o">;</span><span class="w"> </span><span class="n">trackTarget</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Internal helper method used to walk and hover a TRSMMDot target.
+You should not use this directly.</p>
+<p>This is responsible for deciding wether we should walk to a TRSMMDot target or not before attempting to hover it.</p>
+</section>
+<hr class="docutils" />
+<section id="trsmmdot-hover">
+<h2>TRSMMDot.Hover<a class="headerlink" href="#trsmmdot-hover" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSMMDot</span><span class="o">.</span><span class="nf">Hover</span><span class="p">(</span><span class="n">attempts</span><span class="o">:</span><span class="w"> </span><span class="n">Int32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="o">;</span><span class="w"> </span><span class="n">trackTarget</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TRACK_TARGET</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Method used to hover a TRSMMDot target if it’s found on the mainscreen.
+It can update the target position as the mouse moves with <strong>trackTarget</strong>.
+For NPCs that move, this is highly recommended.</p>
+<section id="id16">
+<h3>Example<a class="headerlink" href="#id16" title="Link to this heading"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="c1">//Be in Lumbridge castle</span>
+<span class="n">RSW</span><span class="o">.</span><span class="n">WebWalk</span><span class="p">(</span><span class="n">WaspWeb</span><span class="o">.</span><span class="n">LOCATION_LUMBRIDGE</span><span class="p">)</span><span class="o">;</span>
+<span class="n">RSNPCs</span><span class="o">.</span><span class="n">LumbridgeCook</span><span class="o">.</span><span class="n">Hover</span><span class="p">()</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="trsmmdot-walkhover">
+<h2>TRSMMDot.WalkHover<a class="headerlink" href="#trsmmdot-walkhover" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSMMDot</span><span class="o">.</span><span class="nf">WalkHover</span><span class="p">(</span><span class="n">attempts</span><span class="o">:</span><span class="w"> </span><span class="n">Int32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="o">;</span><span class="w"> </span><span class="n">trackTarget</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TRACK_TARGET</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Method used to walk and hover a TRSMMDot target if it’s found on the mainscreen after walking.
+It can update the target position as the mouse moves with <strong>trackTarget</strong>.
+For NPCs that move, this is highly recommended.</p>
+<section id="id17">
+<h3>Example<a class="headerlink" href="#id17" title="Link to this heading"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="c1">//Be in Lumbridge castle</span>
+<span class="n">RSW</span><span class="o">.</span><span class="n">WebWalk</span><span class="p">(</span><span class="n">WaspWeb</span><span class="o">.</span><span class="n">LOCATION_LUMBRIDGE</span><span class="p">)</span><span class="o">;</span>
+<span class="n">RSNPCs</span><span class="o">.</span><span class="n">LumbridgeCook</span><span class="o">.</span><span class="n">WalkHover</span><span class="p">()</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="trsmmdot-click">
+<h2>TRSMMDot.Click<a class="headerlink" href="#trsmmdot-click" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSMMDot</span><span class="o">.</span><span class="nf">Click</span><span class="p">(</span><span class="n">leftClick</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">True</span><span class="o">;</span><span class="w"> </span><span class="n">attempts</span><span class="o">:</span><span class="w"> </span><span class="n">Int32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Method used to click a TRSMMDot target if it’s found on the mainscreen.</p>
+<section id="id18">
+<h3>Example<a class="headerlink" href="#id18" title="Link to this heading"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="c1">//Be in Lumbridge castle with a walker map of it loaded.</span>
+<span class="nb">WriteLn</span><span class="w"> </span><span class="n">RSNPCs</span><span class="o">.</span><span class="n">LumbridgeCook</span><span class="o">.</span><span class="n">Click</span><span class="p">()</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="trsmmdot-selectoption">
+<h2>TRSMMDot.SelectOption<a class="headerlink" href="#trsmmdot-selectoption" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSMMDot</span><span class="o">.</span><span class="nf">SelectOption</span><span class="p">(</span><span class="n">action</span><span class="o">:</span><span class="w"> </span><span class="n">TStringArray</span><span class="o">;</span><span class="w"> </span><span class="n">attempts</span><span class="o">:</span><span class="w"> </span><span class="n">Int32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Method used to select an option on a TRSMMDot target if it’s found on the mainscreen.</p>
+<section id="id19">
+<h3>Example<a class="headerlink" href="#id19" title="Link to this heading"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="c1">//Be in Lumbridge castle with a walker map of it loaded.</span>
+<span class="nb">WriteLn</span><span class="w"> </span><span class="n">RSNPCs</span><span class="o">.</span><span class="n">LumbridgeCook</span><span class="o">.</span><span class="n">SelectOption</span><span class="p">([</span><span class="s">&#39;Examine&#39;</span><span class="p">])</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="trsmmdot-walkclick">
+<h2>TRSMMDot.WalkClick<a class="headerlink" href="#trsmmdot-walkclick" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSMMDot</span><span class="o">.</span><span class="nf">WalkClick</span><span class="p">(</span><span class="n">leftClick</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">True</span><span class="o">;</span><span class="w"> </span><span class="n">attempts</span><span class="o">:</span><span class="w"> </span><span class="n">Int32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Method used to walk and click a TRSMMDot target if it’s found on the mainscreen.</p>
+<section id="id20">
+<h3>Example<a class="headerlink" href="#id20" title="Link to this heading"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="c1">//Be in Lumbridge castle with a walker map of it loaded.</span>
+<span class="nb">WriteLn</span><span class="w"> </span><span class="n">RSNPCs</span><span class="o">.</span><span class="n">LumbridgeCook</span><span class="o">.</span><span class="n">WalkClick</span><span class="p">()</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="trsmmdot-walkselectoption">
+<h2>TRSMMDot.WalkSelectOption<a class="headerlink" href="#trsmmdot-walkselectoption" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nc">TRSMMDot</span><span class="o">.</span><span class="nf">WalkSelectOption</span><span class="p">(</span><span class="n">action</span><span class="o">:</span><span class="w"> </span><span class="n">TStringArray</span><span class="o">;</span><span class="w"> </span><span class="n">attempts</span><span class="o">:</span><span class="w"> </span><span class="n">Int32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">Boolean</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Method used to walk and select an option on a TRSMMDot target if it’s found on the mainscreen.</p>
+<section id="id21">
+<h3>Example<a class="headerlink" href="#id21" title="Link to this heading"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="c1">//Be in Lumbridge castle with a walker map of it loaded.</span>
+<span class="nb">WriteLn</span><span class="w"> </span><span class="n">RSNPCs</span><span class="o">.</span><span class="n">LumbridgeCook</span><span class="o">.</span><span class="n">WalkSelectOption</span><span class="p">([</span><span class="s">&#39;Examine&#39;</span><span class="p">])</span><span class="o">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="type-trsnpc">
+<h2>type TRSNPC<a class="headerlink" href="#type-trsnpc" title="Link to this heading"></a></h2>
+<p>TRSNPC are a type of TRSMMDot and TRSWalkerObject.
+This are meant to be TRSMMDot that have a yellow minimap dot so TRSNPC.Filter.MinimapDot is True by default and shouldn’t be changed.</p>
+</section>
+<hr class="docutils" />
+<section id="type-trsgrounditem">
+<h2>type TRSGroundItem<a class="headerlink" href="#type-trsgrounditem" title="Link to this heading"></a></h2>
+<p>TRSGroundItem are a type of TRSMMDot and TRSWalkerObject.
+This are meant to be TRSMMDot that have a red minimap dot so TRSGroundItem.Filter.MinimapDot is True by default and shouldn’t be changed.</p>
+</section>
+<hr class="docutils" />
+<section id="type-trsplayer">
+<h2>type TRSPlayer<a class="headerlink" href="#type-trsplayer" title="Link to this heading"></a></h2>
+<p>TRSPlayer are a type of TRSMMDot and TRSWalkerObject.
+This are meant to be TRSMMDot that have a white minimap dot so TRSPlayer.Filter.MinimapDot is True by default and shouldn’t be changed.</p>
+</section>
+<hr class="docutils" />
+<section id="trsmmdot-setupuptext">
+<h2>TRSMMDot.SetupUpText<a class="headerlink" href="#trsmmdot-setupuptext" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">procedure</span><span class="w"> </span><span class="nc">TRSNPC</span><span class="o">.</span><span class="nf">SetupUpText</span><span class="p">(</span><span class="n">upText</span><span class="o">:</span><span class="w"> </span><span class="n">TStringArray</span><span class="p">)</span><span class="o">;</span><span class="w"> </span><span class="kp">override</span><span class="o">;</span>
+<span class="k">procedure</span><span class="w"> </span><span class="nc">TRSGroundItem</span><span class="o">.</span><span class="nf">SetupUpText</span><span class="p">(</span><span class="n">upText</span><span class="o">:</span><span class="w"> </span><span class="n">TStringArray</span><span class="p">)</span><span class="o">;</span><span class="w"> </span><span class="kp">override</span><span class="o">;</span>
+<span class="k">procedure</span><span class="w"> </span><span class="nc">TRSPlayer</span><span class="o">.</span><span class="nf">SetupUpText</span><span class="p">(</span><span class="n">upText</span><span class="o">:</span><span class="w"> </span><span class="n">TStringArray</span><span class="p">)</span><span class="o">;</span><span class="w"> </span><span class="kp">override</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Setup method that extends TRSWalkerObject.SetupUpText(upText: TStringArray);
+These are the methods that should be used to setup TRSNPCs, TRSGroundItems and TRSPlayers as it ensures that the
+TRSNPC.DotType is correctly set.</p>
+</section>
+<hr class="docutils" />
+<section id="debug">
+<h2>Debug<a class="headerlink" href="#debug" title="Link to this heading"></a></h2>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="k">procedure</span><span class="w"> </span><span class="nf">Debug</span><span class="p">(</span><span class="n">rsobject</span><span class="o">:</span><span class="w"> </span><span class="n">TRSObject</span><span class="p">)</span><span class="o">;</span><span class="w"> </span><span class="n">overload</span><span class="o">;</span>
+<span class="k">procedure</span><span class="w"> </span><span class="nf">Debug</span><span class="p">(</span><span class="n">mmdot</span><span class="o">:</span><span class="w"> </span><span class="n">TRSMMDot</span><span class="p">)</span><span class="o">;</span><span class="w"> </span><span class="n">overload</span><span class="o">;</span>
+</pre></div>
+</div>
+<p>Methods used to debug TRSObjects and TRSMMDots.</p>
+<section id="id22">
+<h3>Example<a class="headerlink" href="#id22" title="Link to this heading"></a></h3>
+<div class="highlight-pascal notranslate"><div class="highlight"><pre><span></span><span class="c1">//Run in ge with a walker map setup there.</span>
+<span class="n">Debug</span><span class="p">(</span><span class="n">RSObjects</span><span class="o">.</span><span class="n">GEBank</span><span class="p">)</span><span class="o">;</span>
+
+<span class="c1">//Run in Lumbridge castle with a walker map setup there.</span>
+<span class="n">Debug</span><span class="p">(</span><span class="n">RSNPCs</span><span class="o">.</span><span class="n">LumbridgeCook</span><span class="p">)</span><span class="o">;</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="walker.html" class="btn btn-neutral float-left" title="Walker" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="rsmonster.html" class="btn btn-neutral float-right" title="RSMonters" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, WaspBots.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>  
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+
+ProgressReport
+==============
+This is what's responsible for the in game screen report, often called as
+"paint" or HUDProgressReport in WaspLib.
+
+You can easily toggle the usage this on or off by switching the variables:
+- `WLSettings.RemoteInput.HUDReport`
+- `WLSettings.RemoteInput.Enabled`
+
+.. note:: Keep in mind that ProgressReport requires remote input.
+
+
+------------
+
+type ProgressReport
+~~~~~~~~~~~~~~~~~~~~
+Type responsible for handling the HUDProgressReport, also commonly called as "Paint" or InGame/OnScreen Progress Report.
+
+
+------------
+
+ProgressReport.Terminate
+~~~~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ procedure ProgressReport.Terminate(); static;
+
+Internal method called automatically on termination. This will do things such as free used assetsa and clear the progress report from the game screen.
+
+
+------------
+
+ProgressReport.Setup
+~~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ procedure Self.Setup();  static;
+
+Internal method called when we need to setup Self.
+
+
+------------
+
+ProgressReport.DrawBackground
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ procedure Self.DrawBackground(strArray: TStringArray; FontColor: Int32);  static;
+
+Method that handles drawing the background of our Self.
+Usually called internally by Self.Update().
+
+
+------------
+
+ProgressReport.DrawProgress
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ procedure Self.DrawProgress(strArray: TStringArray; fontColor: Int32); static;
+
+Method that handles drawing the text of our Self.
+Usually called internally by Self.Update().
+
+
+------------
+
+ProgressReport.HideProgress
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ procedure Self.HideProgress();  static;
+
+Used to hide Self.
+Usually called internally by Self.Update().
+
+
+------------
+
+ProgressReport.Update
+~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ procedure Self.Update(StrArray: TStringArray);  static;
+
+Main method that should be called to used to start and update Self.
+
+To see Self.GetNextCycleColor() in action, which was just a fun experiment,
+uncomment `Self.TextColor := Self.GetNextCycleColor(Self.TextColor, 10);`
+
+
+------------
+
+ProgressReport.Setup
+~~~~~~~~~~~~~~~~~~~~
+.. code-block:: pascal
+
+ procedure ProgressReport.Setup(); static; override;
+
+Overriden method to enable ProgressReport.Timer.
+This required to be overriden or we couldn't call already declared methods in ProgressReport.CheckButton().
+
+THIS IS DISABLED IN SIMBA1400 SINCE THIS IS ONLY A THING IN SIMBA1500!
+
+
+------------
