@@ -4,6 +4,19 @@ POHHandler
 
 
 ------------
+ ALTAR
+  Result := (SRL.CountColor(CTS2(12307635, 19, 1.36, 0.91), b) +
+            SRL.CountColor(CTS2(7575724, 13, 0.04, 0.79), b)) > 10;
+  
+
+------------
+
+        WriteLn ERSHouseRoom(j);
+        rotated.Debug();
+        Wait(500);
+        
+
+------------
 
 begin
   ClearDebug();
